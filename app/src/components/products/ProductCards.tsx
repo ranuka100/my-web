@@ -1,4 +1,3 @@
-import React from 'react';
 import { Grid, Typography, Card, CardContent, CardMedia, Box } from '@mui/material';
 
 const products = [

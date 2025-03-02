@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
 import { Grid, Card, Typography, Button, CardMedia, Box } from '@mui/material';
 import Product_Details from '../../data/Product_Details.json';
 
 const DrumsSection = () => {
-  const [data, setData] = useState(Product_Details.products);
+  const data = Product_Details.products;
+
 
   return (
     <div style={{ backgroundColor: 'white', paddingTop: '30px', width: '100%', overflowX: 'hidden' }}>
@@ -36,7 +36,7 @@ const DrumsSection = () => {
 
       <Box sx={{ maxWidth: '1600px', margin: '0 auto', marginBottom: '10vh' }}>
         <Grid container spacing={4} justifyContent="center">
-          {data.map((item, index) => (
+          {data.map((item) => (
             <Grid item xs={12} sm={6} md={6} key={item.product_id}>
               <Card
                 sx={{
