@@ -1,0 +1,31 @@
+#!/bin/sh
+
+echo '👷‍♂️ Running pre-commit checks... Please wait.'
+
+# Step 1: Check Prettier formatting
+echo '🔍 Checking Prettier formatting...'
+if ! npm run check:format; then
+  echo '❌ Code formatting issues detected by Prettier.'
+  echo '🔧 Automatically fixing issues with `npm run format`...'
+  npm run format
+  
+  if ! npm run check:format; then
+    echo '❌ Some formatting issues could not be fixed automatically. Please review manually.'
+    exit 1
+  else
+    echo '✅ Formatting issues have been fixed. Proceeding with the commit...'
+  fi
+else
+  echo '✅ Prettier checks passed!'
+fi
+
+# Step 2: Automatically fix ESLint issues (including unused imports)
+echo '🔍 Running ESLint to check and fix issues...'
+if ! npm run lint:fix; then
+  echo '❌ ESLint detected issues that could not be fixed automatically. Please fix them before committing.'
+  exit 1
+else
+  echo '✅ ESLint checks passed! Unused imports removed (if any).'
+fi
+
+echo '✅ All checks passed! Proceeding with the commit...'

@@ -1,0 +1,72 @@
+{
+  "products": [
+    {
+      "product_id": "1",
+      "name": "DAVULA KEEPSAKE",
+      "desc": "The Geta Bera Miniature is a scaled-down replica of Sri Lanka’s iconic ceremonial drum. Known for its vibrant rhythms and cultural significance, this handcrafted souvenir captures the artistry and tradition of the island’s rich heritage.",
+      "size": "Large",
+      "reason": "A barrel-shaped drum played with one hand and a stick, the Davula is commonly used in Peraheras (processions) and ritualistic Buddhist ceremonies. It is also played in up-country (Kandyan) and low-country dance performances, providing a steady rhythmic beat.",
+      "home_imageSrc": "/images/products/davula/davula.png",
+      "main_imageSrc": "/images/products/davula/Davula_main.png",
+      "img1_src": "/images/products/davula/ASH06957.JPG",
+      "img2_src": "/images/products/davula/IMG_6730.jpg",
+      "img3_src": "/images/products/davula/IMG_6755.jpg",
+      "img4_src": "/images/products/davula/IMG_6800.jpg",
+      "Material": "Premium mahogany wood and hand-painted lacquer.",
+      "Dimensions": "10 cm tall, 5 cm wide.",
+      "Weight": "Lightweight yet durable, perfect for display or gifting.",
+      "Craftsmanship": "Created by skilled Sri Lankan artisans using time-honored techniques."
+    },
+    {
+      "product_id": "2",
+      "name": "Thammattama",
+      "desc": "The Geta Bera Miniature is a scaled-down replica of Sri Lanka’s iconic ceremonial drum. Known for its vibrant rhythms and cultural significance, this handcrafted souvenir captures the artistry and tradition of the island’s rich heritage. B.",
+      "size": "Medium",
+      "reason": "A twin-drum set, the Thammattama is played with two sticks and produces sharp, powerful beats. It is used in Buddhist temple rituals, Peraheras, and traditional dance performances. The drum is often played alongside other instruments to add rhythm to religious processions and ceremonial dances.",
+      "home_imageSrc": "/images/products/Thammattama/Thammattama_home.jpg",
+      "main_imageSrc": "/images/products/Thammattama/Thammattama.jpg",
+      "img1_src": "/images/products/Thammattama/ASH06957.JPG",
+      "img2_src": "/images/products/Thammattama/IMG_6730.jpg",
+      "img3_src": "/images/products/Thammattama/IMG_6775.jpg",
+      "img4_src": "/images/products/Thammattama/IMG_6755.jpg",
+      "Material": "Material of Product B.",
+      "Dimensions": "Dimensions of Product B.",
+      "Weight": "Weight of Product B.",
+      "Craftsmanship": "Craftsmanship of Product B."
+    },
+    {
+      "product_id": "3",
+      "name": "Pahatharata Beraya (Yak Beraya)",
+      "desc": "The Geta Bera Miniature is a scaled-down replica of Sri Lanka’s iconic ceremonial drum. Known for its vibrant rhythms and cultural significance, this handcrafted souvenir captures the artistry and tradition of the island’s rich heritage. C.",
+      "size": "Medium",
+      "reason": "Also known as the 'Demon Drum,' this cylindrical drum is an essential instrument in low-country (Pahatharata) dance rituals. It is used in healing ceremonies like Bali and Thovil, where dancers invoke spirits to heal the sick or ward off evil influences.",
+      "home_imageSrc": "/images/products/pahatharata_beraya/pahatharata_bereaya_home.png",
+      "main_imageSrc": "/images/products/pahatharata_beraya/pahatharata_bereaya_main.png",
+      "img1_src": "/images/products/pahatharata_beraya/IMG_6752.jpg",
+      "img2_src": "/images/products/pahatharata_beraya/IMG_6781.jpg",
+      "img3_src": "/images/products/pahatharata_beraya/IMG_6730.jpg",
+      "img4_src": "/images/products/pahatharata_beraya/IMG_6755.jpg",
+      "Material": "Material of Product C.",
+      "Dimensions": "Dimensions of Product C.",
+      "Weight": "Weight of Product C.",
+      "Craftsmanship": "Craftsmanship of Product C."
+    },
+    {
+      "product_id": "4",
+      "name": "Geta Beraya",
+      "desc": "The Geta Bera Miniature is a scaled-down replica of Sri Lanka’s iconic ceremonial drum. Known for its vibrant rhythms and cultural significance, this handcrafted souvenir captures the artistry and tradition of the island’s rich heritage. D.",
+      "size": "Medium",
+      "reason": "Known as the 'drum of rituals,' this hourglass-shaped instrument is played in Buddhist ceremonies and Kandyan dances. Its distinct sound is achieved by tying one side tighter than the other, creating varying tones.",
+      "home_imageSrc": "/images/products/getaberaya/getaberaya.png",
+      "main_imageSrc": "/images/products/getaberaya/getaberaya_main.png",
+      "img1_src": "/images/products/getaberaya/ASH06860.jpg",
+      "img2_src": "/images/products/getaberaya/ASH06864.JPG",
+      "img3_src": "/images/products/getaberaya/IMG_6780.jpg",
+      "img4_src": "/images/products/getaberaya/IMG_6730.jpg",
+      "Material": "Material of Product D.",
+      "Dimensions": "Dimensions of Product D.",
+      "Weight": "Weight of Product D.",
+      "Craftsmanship": "Craftsmanship of Product D."
+    }
+  ]
+}
