@@ -4,12 +4,12 @@ import Achievements from '../../components/Achievements';
 import ImageGallery from '../../components/common/ImageGallery';
 
 // Import images properly
-const pic3 = "../../../public/images/products/getaberaya/getaberaya.png";
-import pic4 from '../../../public/images/products/Thammattama/Thammattama.jpg';
-import pic1 from '../../../public/images/products/davula/davula.png';
-const pic2 = "../../../public/images/products/pahatharata_beraya/pahatharata_bereaya_home.png";
+import pic3 from "/images/products/getaberaya/getaberaya.png";
+import pic4 from '/images/products/Thammattama/Thammattama.jpg';
+import pic1 from '/images/products/davula/davula.png';
+import pic2 from "/images/products/pahatharata_beraya/pahatharata_bereaya_home.png";
 
-import yt_thumbamil from '../../../public/images/aboutUs/vedio_thumbmail.png';
+import yt_thumbamil from '/images/aboutUs/vedio_thumbmail.png';
 import background from '../../assets/backgroundImages/Group.svg'; // Import the image
 
 const About = () => {
