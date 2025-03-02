@@ -25,9 +25,8 @@ export default defineConfig({
     },
   },
   server: {
-    // Use middleware to handle history fallback for client-side routing
-    middlewareMode: 'html',
-    // Optionally, you can add more custom server options here if needed
+    // Set middlewareMode to true for HTML fallback
+    middlewareMode: true,
   },
   define: {
     'process.env': {},
