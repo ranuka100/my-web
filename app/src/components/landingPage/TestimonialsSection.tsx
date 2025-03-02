@@ -36,19 +36,19 @@ const TestimonialsSection = () => {
       text: 'The souvenirs I purchased were truly artistic and unique something I’ve never seen before!',
       name: 'Sri Lanka Tourism Development Authority',
       country: 'Sri Lanka',
-      image: '../../../public/images/home/sltda_logo.png',
+      image: '/images/home/sltda_logo.png',
     },
     {
       text: 'A perfect blend of tradition, creativity, and craftsmanship in every handcrafted souvenir!',
       name: 'Ministry of Industry and Entrepreneurship Development',
       country: 'Sri Lanka',
-      image: '../../../public/images/home/idb_sl_trans_new.png',
+      image: '/images/home/idb_sl_trans_new.png',
     },
     {
       text: 'A unique blend of tradition, artistry, and craftsmanship in every souvenir, loved by travelers!',
       name: 'Classic Travel (Pvt) Ltd',
       country: 'Sri Lanka',
-      image: '../../../public/images/home/Classic-Travel-Logo.png',
+      image: '/images/home/Classic-Travel-Logo.png',
 
     }
   ];
