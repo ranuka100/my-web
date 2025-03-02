@@ -26,8 +26,8 @@ export default defineConfig({
   },
   server: {
     // Enable historyApiFallback for React Router
-    // middlewareMode: true,
-    historyApiFallback: true, 
+    middlewareMode: true,
+    // historyApiFallback: true, 
   },
   define: {
     'process.env': {},
