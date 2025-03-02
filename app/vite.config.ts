@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   build: {
@@ -24,7 +25,9 @@ export default defineConfig({
     },
   },
   server: {
-    historyApiFallback: true, // Ensures Vite dev server works with React Router
+    // Use middleware to handle history fallback for client-side routing
+    middlewareMode: 'html',
+    // Optionally, you can add more custom server options here if needed
   },
   define: {
     'process.env': {},
