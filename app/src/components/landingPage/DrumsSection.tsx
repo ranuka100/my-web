@@ -6,7 +6,7 @@ const DrumsSection = () => {
 
 
   return (
-    <div style={{ backgroundColor: 'white', paddingTop: '30px', width: '100%', overflowX: 'hidden' }}>
+    <div style={{ backgroundColor: '#F5F5F5', paddingTop: '30px', width: '100%', overflowX: 'hidden' }}>
       <Typography
         variant="h1"
         sx={{
@@ -41,7 +41,7 @@ const DrumsSection = () => {
               <Card
                 sx={{
                   display: 'flex',
-                  backgroundColor: 'white',
+                  backgroundColor: '#F5F5F5',
                   borderRadius: '10px',
                   boxShadow: '0px 4px 10px rgba(245, 238, 238, 0.1)',
                   border: '3px solid rgba(88, 86, 86, 0.44)',

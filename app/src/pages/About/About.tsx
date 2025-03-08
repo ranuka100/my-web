@@ -4,10 +4,10 @@ import Achievements from '../../components/Achievements';
 import ImageGallery from '../../components/common/ImageGallery';
 
 // Import images properly
-import pic3 from "/images/products/getaberaya/getaberaya.png";
-import pic4 from '/images/products/Thammattama/Thammattama.jpg';
-import pic1 from '/images/products/davula/davula.png';
-import pic2 from "/images/products/pahatharata_beraya/pahatharata_bereaya_home.png";
+import pic3 from "/images/products/getaberaya/getaberaya_aboutus.png";
+import pic4 from '/images/products/Thammattama/Thammattama_aboutus.jpg';
+import pic1 from '/images/products/davula/davula_aboutus.png';
+import pic2 from "/images/products/pahatharata_beraya/pahatharata_bereaya_aboutus.png";
 
 import yt_thumbamil from '/images/aboutUs/vedio_thumbmail.png';
 import background from '../../assets/backgroundImages/Group.svg'; // Import the image
@@ -21,6 +21,7 @@ const About = () => {
         {/* Main Container */}
         <Box
           sx={{
+            marginTop: { xs: '-8vh', md: '0px'},
             position: 'relative',
             display: 'flex',
             flexDirection: { xs: 'column', md: 'row' },

@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <Box sx={{ width: '100%', padding: '2rem 0', backgroundColor: 'white' }}>
+    <Box sx={{ width: '100%', padding: '2rem 0', backgroundColor: '#F5F5F5' }}>
       <Slider {...settings}>
         {testimonials.map((testimonial, index) => (
           <Box

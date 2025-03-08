@@ -208,14 +208,14 @@ const ProductInfor = () => {
                 <Grid item xs={12} sm={4} key={index}>
                   <Card
                     sx={{
-                      width: '287.445px',
-                      height: '270.51px',
+                      width: '288px',
+                      height: '270px',
                       gap: '6.53px',
                       marginBottom: '50px',
                       textAlign: 'center',
-                      borderRadius: '9.8px',
+                      borderRadius: '10px',
                       borderWidth: '0.82px',
-                      padding: '13.07px',
+                      padding: '13px',
                       boxShadow: '0px 4px 6px rgba(56, 53, 53, 0.62)',
                       backgroundColor: 'transparent',
                       '&:hover': {
@@ -224,13 +224,21 @@ const ProductInfor = () => {
                     }}
                     onClick={() => handleProductClick(products.indexOf(product))}
                   >
-                    <CardMedia
-                      component="img"
-                      alt={product.name}
-                      height="200"
-                      image={product.home_imageSrc} // Using the main image for display
-                      sx={{ objectFit: 'contain', padding: '10px' }}
-                    />
+                  <CardMedia
+                    component="img"
+                    alt={product.name}
+                    height="200"
+                    image={product.home_imageSrc} // Using the main image for display
+                    sx={{
+                      objectFit: 'contain',
+                      padding: '10px',
+                      display: 'flex',             // Ensure it uses flexbox
+                      justifyContent: 'center',    // Center horizontally
+                      alignItems: 'center',        // Center vertically
+                      marginLeft: '-10px'
+                    }}
+                  />
+
                     <CardContent>
                       <Typography
                         variant="h6"
