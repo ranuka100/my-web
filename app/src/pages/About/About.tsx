@@ -59,31 +59,30 @@ const About = () => {
                 variant="body1"
                 paragraph
                 sx={{ textAlign: 'justify', fontSize: '20px' }}
-              >
-                At <strong>DRUMS</strong>, we celebrate the rich heritage of Sri
-                Lanka through our handcrafted traditional drum souvenirs.
-                Founded by an award-winning artisan and cultural advocate, our
-                mission is to share the beauty, history, and craftsmanship of
-                Sri Lankan culture with the world.
-              </Typography>
-              <Typography
+                >
+                At <strong>New Tharanga Musical Instruments</strong>, we are dedicated to preserving Sri Lanka’s 2,500-year-old tradition of crafting musical instruments. By blending time-honored techniques with modern innovations, we create high-quality, reliable products that musicians trust worldwide.
+                </Typography>
+                <Typography
                 variant="body1"
                 paragraph
                 sx={{ textAlign: 'justify', fontSize: '20px' }}
-              >
-                Our founder’s dedication to preserving traditional artistry has
-                been recognized with prestigious awards, a testament to the
-                passion and skill that define every piece in our collection.
-              </Typography>
-              <Typography
+                >
+                Our commitment to excellence has earned us prestigious national honors, including the <strong>"Rajatha Sammana"</strong> and the <strong>Presidential Award</strong> for the Most Outstanding Drum Designer in Sri Lanka for seven consecutive years.
+                </Typography>
+                <Typography
                 variant="body1"
                 paragraph
                 sx={{ textAlign: 'justify', fontSize: '20px' }}
-              >
-                When you choose a souvenir from <strong>DRUMS</strong>, you’re
-                not just purchasing a product—you’re becoming part of a legacy
-                that honors the rhythm, spirit, and artistry of Sri Lanka.
-              </Typography>
+                >
+                In addition to musical instruments, we pioneer <strong>sustainable handcrafted drum souvenirs</strong> using leftover materials. Through international collaborations with the <strong>National Crafts Council</strong> and the <strong>Tourism Promotion Bureau</strong>, we proudly showcase Sri Lankan artistry to the world.
+                </Typography>
+                <Typography
+                variant="body1"
+                paragraph
+                sx={{ textAlign: 'justify', fontSize: '20px' }}
+                >
+                Choosing <strong>New Tharanga Musical Instruments</strong> means becoming part of a legacy that values quality, reliability, and the rich heritage of Sri Lankan craftsmanship.
+                </Typography>
             </Box>
           </Box>
 
@@ -95,6 +94,7 @@ const About = () => {
               flex: 1,
               gap: 2,
               zIndex: 1,
+              marginTop: '20px'
             }}
           >
             {/* First Vertical Section */}
@@ -103,7 +103,7 @@ const About = () => {
             >
               {/* Top Section */}
               <Box
-                sx={{ height: '250px', borderRadius: 2, overflow: 'hidden' }}
+                sx={{ height: { xs: '250px', md: '400px' }, borderRadius: 2, overflow: 'hidden' }}
               >
                 <img
                   src={pic1}
@@ -135,7 +135,7 @@ const About = () => {
               </Box>
               {/* Bottom Section */}
               <Box
-                sx={{ height: '250px', borderRadius: 2, overflow: 'hidden' }}
+                sx={{ height: { xs: '250px', md: '400px' }, borderRadius: 2, overflow: 'hidden' }}
               >
                 <img
                   src={pic4}
