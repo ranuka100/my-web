@@ -22,7 +22,7 @@ import { useLocation } from 'react-router-dom';
 const Footer = () => {
   const location = useLocation();
   // Define routes where the footer should be curved
-  const curvedRoutes = ['/', '/about']; // Example routes
+  const curvedRoutes = ['/','/product', '/about']; // Example routes
   const isCurved = curvedRoutes.includes(location.pathname);
   console.log('first', isCurved);
   return (
@@ -38,9 +38,7 @@ const Footer = () => {
           sx={{
             backgroundColor: 'white',
             color: 'white',
-            py: 10,
             borderRadius: isCurved ? '0 0 100% 100%' : '0',
-            marginBottom: '1rem',
           }}
         ></Box>
 

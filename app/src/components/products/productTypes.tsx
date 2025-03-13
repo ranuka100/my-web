@@ -143,7 +143,6 @@ const TraditionalDrumsPage = () => {
           backgroundImage: 'url("/images/products/bg_main.svg")', // Fix: Use correct public path
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          zIndex: 1000,
         }}
       />
     </>
