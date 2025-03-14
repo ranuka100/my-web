@@ -39,6 +39,12 @@ const TraditionalDrumsPage = () => {
           paddingLeft: '12vw',
           paddingRight: '12vw',
           textAlign: 'center',
+          '@media (max-width: 600px)': {
+            paddingLeft: '5vw',
+            paddingRight: '5vw',
+            marginTop: '5vh'
+
+          },
         }}
       >
         {/* Title */}
@@ -50,6 +56,11 @@ const TraditionalDrumsPage = () => {
             fontSize: '48px',
             lineHeight: '65.47px',
             textAlign: 'center',
+            '@media (max-width: 600px)': {
+              fontSize: '36px',
+              lineHeight: '45px',
+              wordWrap: 'break-word',
+            },
           }}
         >
           The Heartbeat of Sri Lanka Traditional Drums
@@ -65,6 +76,11 @@ const TraditionalDrumsPage = () => {
             lineHeight: '36px',
             textAlign: 'justify',
             marginTop: '20px',
+            '@media (max-width: 600px)': {
+              paddingLeft: '15px',
+              paddingRight: '15px',
+              fontSize: '22px',
+            },
           }}
         >
           For centuries, traditional drums have been the rhythmic backbone of Sri Lanka's vibrant culture. Known locally as “Bera,” these drums are more than musical instruments—they are sacred vessels that carry the island’s history, spirituality, and artistic expression.
@@ -78,8 +94,12 @@ const TraditionalDrumsPage = () => {
             fontWeight: 600,
             fontSize: '36px',
             lineHeight: '54px',
-            textAlign: 'left',
+            textAlign: 'center',
             marginTop: '60px',
+            '@media (max-width: 600px)': {
+              fontSize: '30px',
+              lineHeight: '38px',
+            },
           }}
         >
           {currentItem.name}
@@ -91,23 +111,41 @@ const TraditionalDrumsPage = () => {
             fontFamily: 'Poppins',
             fontWeight: 400,
             fontSize: '24px',
-            lineHeight: '40px',
-            textAlign: 'left',
+            lineHeight: '36px',
+            textAlign: 'justify',
             marginTop: '20px',
+            '@media (max-width: 600px)': {
+              paddingLeft: '15px',
+              paddingRight: '15px',
+              fontSize: '22px',
+            },
           }}
         >
           {currentItem.reason}
         </Typography>
 
         {/* Image */}
-        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '40px',
+            '@media (max-width: 600px)': {
+              marginTop: '30px',
+            },
+          }}
+        >
           <img
             src={currentItem.home_imageSrc}
             alt={currentItem.name}
             style={{
               maxWidth: '100%', // Fix: Maintain aspect ratio
-              height: '450px',
+              height: 'auto',
               borderRadius: '10px',
+              objectFit: 'cover',
+              maxHeight: '450px',
+              width: 'auto',
+              margin: '0 auto', // Center the image
             }}
           />
         </Box>
