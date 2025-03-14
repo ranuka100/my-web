@@ -1,24 +1,19 @@
-import { SetStateAction, useState, useEffect } from 'react';
-import {
-  Grid,
-  Typography,
-  IconButton,
-  Box,
-  CardMedia,
-  Card,
-  CardContent,
-} from '@mui/material';
+import { useState, useEffect } from 'react';
+import { Grid, Typography, IconButton, Box, CardMedia, Card, CardContent, useMediaQuery, useTheme } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import productsData from '../../data/Product_Details.json'; // Import the JSON file
+import ProductInfoMobile from './ProductInfor_mobile'; // Assuming you have a separate mobile view component
 
 const ProductInfor = () => {
-  // Use the imported JSON data
   const products = productsData.products;
+
 
   const [currentProductIndex, setCurrentProductIndex] = useState(0);
   const [mainImage, setMainImage] = useState(products[0].main_imageSrc);
-
   const currentProduct = products[currentProductIndex];
+  
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm')); // Detect if screen is mobile size
+
   const smallImages = [
     currentProduct.main_imageSrc,
     currentProduct.img1_src,
@@ -61,6 +56,9 @@ const ProductInfor = () => {
 
   // Get the next 3 products for the "Other Products" section
   const displayedOtherProducts = getOtherProducts(currentProductIndex);
+  if (isMobile) {
+    return <ProductInfoMobile currentProduct={currentProduct} smallImages={smallImages} displayedOtherProducts={displayedOtherProducts} handleImageClick={handleImageClick} handlePrevProduct={handlePrevProduct} handleNextProduct={handleNextProduct} />;
+  }
 
   return (
     <Grid container spacing={2} sx={{ marginTop: '6vh', paddingLeft: '12vw', paddingRight: '12vw' }}>
@@ -194,14 +192,12 @@ const ProductInfor = () => {
       {/* New Row: Other Products */}
       <Grid item xs={12}>
         <Grid container spacing={2}>
-          {/* Left side */}
           <Grid item xs={12} sm={3}>
             <Typography variant="h3" component="h2" sx={{ fontWeight: 'bold', marginTop: '15vh' }}>
               Other Products
             </Typography>
           </Grid>
 
-          {/* Right side - List of products */}
           <Grid item xs={12} sm={9}>
             <Grid container spacing={2}>
               {displayedOtherProducts.map((product, index) => (
@@ -224,20 +220,20 @@ const ProductInfor = () => {
                     }}
                     onClick={() => handleProductClick(products.indexOf(product))}
                   >
-                  <CardMedia
-                    component="img"
-                    alt={product.name}
-                    height="200"
-                    image={product.home_imageSrc} // Using the main image for display
-                    sx={{
-                      objectFit: 'contain',
-                      padding: '10px',
-                      display: 'flex',             // Ensure it uses flexbox
-                      justifyContent: 'center',    // Center horizontally
-                      alignItems: 'center',        // Center vertically
-                      marginLeft: '-10px'
-                    }}
-                  />
+                    <CardMedia
+                      component="img"
+                      alt={product.name}
+                      height="200"
+                      image={product.home_imageSrc}
+                      sx={{
+                        objectFit: 'contain',
+                        padding: '10px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        marginLeft: '-10px',
+                      }}
+                    />
 
                     <CardContent>
                       <Typography
