@@ -1,18 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Grid, Typography, IconButton, Box, CardMedia, Card, CardContent, useMediaQuery, useTheme } from '@mui/material';
+import { Grid, Typography, IconButton, Box, CardMedia, Card, CardContent, useMediaQuery } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import productsData from '../../data/Product_Details.json'; // Import the JSON file
-import ProductInfoMobile from './ProductInfor_mobile'; // Assuming you have a separate mobile view component
+import ProductInfoMobile from './ProductInfor_mobile'; // Import mobile view
 
 const ProductInfor = () => {
   const products = productsData.products;
 
-
   const [currentProductIndex, setCurrentProductIndex] = useState(0);
   const [mainImage, setMainImage] = useState(products[0].main_imageSrc);
   const currentProduct = products[currentProductIndex];
-  
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm')); // Detect if screen is mobile size
 
   const smallImages = [
     currentProduct.main_imageSrc,
@@ -22,13 +19,19 @@ const ProductInfor = () => {
     currentProduct.img4_src,
   ];
 
+  // Use media query to detect screen size
+  const isMobile = useMediaQuery('(max-width:600px)');
+
+  // If it's mobile view, render the mobile version of the component
+  if (isMobile) {
+    return <ProductInfoMobile />;
+  }
   // Update main image whenever the current product index changes
   useEffect(() => {
     setMainImage(currentProduct.main_imageSrc);
   }, [currentProductIndex]);
 
   // Function to change main image on click
-  const handleImageClick = (image: SetStateAction<string>) => setMainImage(image);
 
   // Handle previous and next product
   const handlePrevProduct = () => {
@@ -56,8 +59,10 @@ const ProductInfor = () => {
 
   // Get the next 3 products for the "Other Products" section
   const displayedOtherProducts = getOtherProducts(currentProductIndex);
-  if (isMobile) {
-    return <ProductInfoMobile currentProduct={currentProduct} smallImages={smallImages} displayedOtherProducts={displayedOtherProducts} handleImageClick={handleImageClick} handlePrevProduct={handlePrevProduct} handleNextProduct={handleNextProduct} />;
+
+
+  function handleImageClick(_image: string): void {
+    throw new Error('Function not implemented.');
   }
 
   return (

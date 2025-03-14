@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Grid, Typography, IconButton, Box, CardMedia, Card, CardContent, useMediaQuery, useTheme } from '@mui/material';
+import { useState, useEffect, SetStateAction } from 'react';
+import { Grid, Typography, IconButton, Box, CardMedia, Card, CardContent } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import productsData from '../../data/Product_Details.json'; // Import the JSON file
 
@@ -10,7 +10,6 @@ const ProductInfoMobile = () => {
   const [mainImage, setMainImage] = useState(products[0].main_imageSrc);
   const currentProduct = products[currentProductIndex];
   
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm')); // Detect if screen is mobile size
 
   const smallImages = [
     currentProduct.main_imageSrc,
@@ -25,16 +24,16 @@ const ProductInfoMobile = () => {
     setMainImage(currentProduct.main_imageSrc);
   }, [currentProductIndex]);
 
-  const handleImageClick = (image) => setMainImage(image);
+  const handleImageClick = (image: SetStateAction<string>) => setMainImage(image);
   const handlePrevProduct = () => setCurrentProductIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : products.length - 1));
   const handleNextProduct = () => setCurrentProductIndex((prevIndex) => (prevIndex < products.length - 1 ? prevIndex + 1 : 0));
 
   // Handle click on other products
-  const handleOtherProductClick = (index) => {
+  const handleOtherProductClick = (index: SetStateAction<number>) => {
     setCurrentProductIndex(index); // Update the current product to the clicked one
   };
 
-  const getOtherProducts = (currentIndex) => {
+  const getOtherProducts = (currentIndex: number) => {
     const productCount = products.length;
     const nextProducts = [];
     for (let i = 1; i <= 3; i++) {
