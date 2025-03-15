@@ -56,7 +56,7 @@ const Footer = () => {
               <Box display="flex" alignItems="center" mb={1}>
                 <LocationOn sx={{ mr: 1 }} />
                 <Typography variant="body2">
-                  No. 121/C, Kadawatha, Sri Lankayy
+                  NO. 34, Kandy Road, Nittambuwa, Sri Lanka
                 </Typography>
               </Box>
               <Box display="flex" alignItems="center" mb={1}>
@@ -70,7 +70,7 @@ const Footer = () => {
                       '&:hover': { color: '#D2691E' },
                     }}
                   >
-                    info@music.com.lk
+                    info@tharangadrums.lk
                   </Link>
                 </Typography>
               </Box>
@@ -85,7 +85,7 @@ const Footer = () => {
                       '&:hover': { color: '#D2691E' },
                     }}
                   >
-                    +94 70 590 816
+                    +94 77 338 8998
                   </Link>
                 </Typography>
               </Box>
@@ -100,7 +100,7 @@ const Footer = () => {
                       '&:hover': { color: '#D2691E' },
                     }}
                   >
-                    +94 77 578 866
+                    +94 77 338 8998
                   </Link>
                 </Typography>
               </Box>
