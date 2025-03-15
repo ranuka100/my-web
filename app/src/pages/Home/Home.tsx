@@ -11,11 +11,15 @@ const Home = () => {
       <div id="hero-section">
         <HeroSection /> {/* Navbar text should be white */}
       </div>
-      <HomeProductSection/>
+      <div id="home-product-section">
+        <HomeProductSection /> {/* Default navbar text color (white) */}
+      </div>
       <div id="impact-section">
         <ImpactSection /> {/* Navbar text should be black */}
       </div>
-      <DrumsSection />
+      <div id="drums-section">
+        <DrumsSection /> {/* Default navbar text color (white) */}
+      </div>
       <Container id="testimonials-section" maxWidth="lg">
         <TestimonialsSection /> {/* Navbar text should be black */}
       </Container>

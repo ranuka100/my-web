@@ -94,9 +94,12 @@ function NavBar() {
     // IntersectionObserver for dynamic navbar color on Home page
     const sections = [
       { id: 'hero-section', color: 'white' },
-      { id: 'impact-section', color: 'black' },
+      { id: 'home-product-section', color: 'black' },
+      { id: 'impact-section', color: 'white' },
+      { id: 'drums-section"', color: 'black' },
       { id: 'testimonials-section', color: 'black' },
     ];
+
 
     const observer = new IntersectionObserver(
       (entries) => {
