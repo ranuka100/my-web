@@ -63,7 +63,7 @@ const ProductInfoMobile = () => {
   };
 
   return (
-    <Grid container spacing={2} sx={{ padding: '25px' }}>
+    <Grid container spacing={2} sx={{ padding: '15px' }}>
       {/* Product Name */}
       <Grid item xs={12}>
         <Typography variant="h5" sx={{ textAlign: 'center', fontWeight: 'bold', marginTop: '15px' }}>

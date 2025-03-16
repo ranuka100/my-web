@@ -72,13 +72,13 @@ function NavBar() {
       }
 
       // Set a new timer to hide the navbar after 2 seconds (only if mouse is not hovering over navbar)
-      if (!isMouseOver) { // Only hide if mouse is not over the navbar
-        setTimer(
-          setTimeout(() => {
-            setVisible(false); // Hide the navbar after 2 seconds
-          }, 2000) // Close navbar after 2 seconds
-        );
-      }
+      // if (!isMouseOver) { // Only hide if mouse is not over the navbar
+      //   setTimer(
+      //     setTimeout(() => {
+      //       setVisible(false); // Hide the navbar after 2 seconds
+      //     }, 2000) // Close navbar after 2 seconds
+      //   );
+      // }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -151,7 +151,7 @@ function NavBar() {
             letterSpacing: '0.2rem',
             color: textColor, // Dynamic text color
             textAlign: 'left',
-            margin: { xs: '20px 0 20px 12px', md: '20px 0 20px 8px' }, // Adjust margin-left for mobile
+            margin: { xs: '20px 0 20px 0px', md: '20px 0 20px 8px' }, // Adjust margin-left for mobile
           }}
         >
           DRUMS
@@ -242,7 +242,7 @@ function NavBar() {
                   sx={{
                     textAlign: 'center',
                     color: textColor,
-                    fontSize: { xs: '20px', md: '24px' },
+                    fontSize: { xs: '20px', md: '27px' },
                     width: '100%',
                     justifyContent: 'center',
                     '&:hover': {

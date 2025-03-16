@@ -40,8 +40,8 @@ const TraditionalDrumsPage = () => {
           paddingRight: '12vw',
           textAlign: 'center',
           '@media (max-width: 600px)': {
-            paddingLeft: '5vw',
-            paddingRight: '5vw',
+            paddingLeft: '15px',
+            paddingRight: '15px',
             marginTop: '5vh'
 
           },
@@ -77,8 +77,6 @@ const TraditionalDrumsPage = () => {
             textAlign: 'justify',
             marginTop: '20px',
             '@media (max-width: 600px)': {
-              paddingLeft: '15px',
-              paddingRight: '15px',
               fontSize: '22px',
             },
           }}
@@ -115,8 +113,7 @@ const TraditionalDrumsPage = () => {
             textAlign: 'justify',
             marginTop: '20px',
             '@media (max-width: 600px)': {
-              paddingLeft: '15px',
-              paddingRight: '15px',
+
               fontSize: '22px',
             },
           }}
