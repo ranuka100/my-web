@@ -54,29 +54,37 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <Box sx={{ width: '100%', padding: '2rem 0', backgroundColor: '#F5F5F5' }}>
+    <Box sx={{ width: '100%', padding: { xs: '1px', sm: '2rem 0',marginBottom: '45px' }, backgroundColor: '#F5F5F5' }}>
       <Slider {...settings}>
         {testimonials.map((testimonial, index) => (
           <Box
             key={index}
-            sx={{ display: 'flex', justifyContent: 'center', padding: '1rem' }}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              padding: { xs: 0, sm: '1rem' }, // Removed padding for mobile, kept for larger screens
+            }}
           >
             <Grid
               container
               spacing={2}
               alignItems="center"
               justifyContent="center"
+              textAlign="center"
             >
-              <Grid item>
+              <Grid item xs={12}>
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
                   style={{
                     borderRadius: '50%',
-                    width: 100, // Increased size of profile image
-                    height: 100, // Increased size of profile image
-                    objectFit: 'cover', // Ensures the image fits the circle shape properly
-                    marginBottom: '1rem', // Adds space between the image and the review
+                    width: 100,
+                    height: 100,
+                    objectFit: 'cover',
+                    marginBottom: '1rem',
+                    display: 'block',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
                   }}
                 />
               </Grid>
