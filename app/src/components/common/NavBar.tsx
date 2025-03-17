@@ -46,7 +46,7 @@ function NavBar() {
   const [textColor, setTextColor] = useState(
     themes[location.pathname]?.textColor || 'black'
   );
-  const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+  const [timer] = useState<NodeJS.Timeout | null>(null);
   const [isMouseOver, setIsMouseOver] = useState(false); // Track mouse hover over navbar
 
   useEffect(() => {
