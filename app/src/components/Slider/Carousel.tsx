@@ -9,7 +9,7 @@ import { Autoplay } from 'swiper/modules';
 const Carousel = () => {
   const slides = [
     {
-      imageSrc: '../../../public/images/products/davula/IMG_6755.jpg', // Updated image link
+      imageSrc: '/images/products/davula/IMG_6755.jpg', // Updated image link
       title: 'Geta Bera sadsasd',
       description:
         'A beautifully crafted miniature of the iconic Geta Bera, designed with intricate details that reflect its ceremonial importance.',
@@ -18,7 +18,7 @@ const Carousel = () => {
       link: '/learn-more',
     },
     {
-      imageSrc: '../../../public/images/products/Thammattama/IMG_6775.jpg', // Updated image link
+      imageSrc: '/images/products/Thammattama/IMG_6775.jpg', // Updated image link
       title: 'Another Souvenir',
       description:
         'This souvenir showcases intricate designs that highlight cultural significance.',
@@ -27,7 +27,7 @@ const Carousel = () => {
       link: '/learn-more',
     },
     {
-      imageSrc: '../../../public/images/products/getaberaya/ASH06860.jpg', // Updated image link
+      imageSrc: '/images/products/getaberaya/ASH06860.jpg', // Updated image link
       title: 'Traditional Art',
       description:
         'A stunning piece of traditional art, capturing the essence of history and craftsmanship.',
@@ -36,7 +36,7 @@ const Carousel = () => {
       link: '/learn-more',
     },
     {
-      imageSrc: '../../../public/images/products/pahatharata_beraya/IMG_6752.jpg', // Updated image link
+      imageSrc: '/images/products/pahatharata_beraya/IMG_6752.jpg', // Updated image link
       title: 'Pahatharata Beraya',
       description:
         'A beautiful depiction of the cultural symbol, showcasing traditional artistry.',
