@@ -82,6 +82,10 @@ const ImpactSection = () => {
                   textAlign: 'left',
                   color: '#FFFFFF',
                   marginRight: 2, // Increased margin for spacing
+                  '@media (max-width:600px)': {
+                    display: 'none',
+
+                  },
                 }}
               >
                 <FormatQuote
@@ -90,22 +94,37 @@ const ImpactSection = () => {
                     color: 'white',
                     transform: 'rotate(180deg)',
                     paddingTop: '15px',
+                    '@media (max-width:600px)': {
+                      display: 'none',
+                    },
                   }}
                 />
                 Your Purchase<br></br> Makes a Difference
                 <FormatQuote
-                  sx={{ fontSize: 48, color: 'white', paddingBottom: '15px' }}
+                  sx={{
+                    fontSize: 48,
+                    color: 'white',
+                    paddingBottom: '15px',
+                    '@media (max-width:600px)': {
+                      display: 'none',
+                    },
+                  }}
                 />
               </Typography>
             </Box>
           </motion.div>
 
-          {/* Animated Paragraph */}
+          {/* Animated Paragraph (Hidden on Mobile) */}
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5, ease: 'easeOut', delay: 0.1 }}
             viewport={{ once: true }}
+            sx={{
+              '@media (max-width:600px)': {
+                display: 'none', // Hide this on mobile view
+              },
+            }}
           >
             <Typography
               variant="body1"
