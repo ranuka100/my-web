@@ -77,12 +77,12 @@ const HeroSection = () => {
           <Typography
             sx={{
               fontFamily: 'Raleway',
-              fontSize: '50px',
+              fontSize: '52px',
               textAlign: 'left',
               textUnderlinePosition: 'from-font',
               textDecorationSkipInk: 'none',
               color: '#FFFFFF',
-              marginTop: '10vh',
+              marginTop: '12vh',
               transform: animateText ? 'translateY(0)' : 'translateY(50px)', 
               opacity: animateText ? 1 : 0,
               transition: 'transform 1s ease-out, opacity 1s ease-out',
@@ -94,7 +94,7 @@ const HeroSection = () => {
           <Typography
             sx={{
               fontFamily: 'Raleway',
-              fontSize: '70px',
+              fontSize: '60px',
               fontWeight: 600,
               lineHeight: '90px',
               textAlign: 'left',
@@ -112,7 +112,7 @@ const HeroSection = () => {
           <Typography
             sx={{
               fontFamily: 'Raleway',
-              fontSize: '70px',
+              fontSize: '75px',
               fontWeight: 600,
               lineHeight: '90px',
               textAlign: 'left',
@@ -130,9 +130,9 @@ const HeroSection = () => {
           <Typography
             sx={{
               fontFamily: 'Poppins',
-              fontSize: '24px',
+              fontSize: '26px',
               fontWeight: 100,
-              lineHeight: '40px',
+              lineHeight: '42px',
               textAlign: 'justify',
               textUnderlinePosition: 'from-font',
               textDecorationSkipInk: 'none',
