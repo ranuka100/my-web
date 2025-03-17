@@ -1,13 +1,13 @@
-import { Box, Grid, Typography, IconButton, Tooltip, useMediaQuery } from '@mui/material';
+import { Box, Grid, Typography, IconButton, Tooltip } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-
-import bg_pic_main from '../../../public/images/home/Untitled design.svg'; // Ensure correct path
 import { useEffect, useState } from 'react';
 
+import bg_pic_main from '../../../public/images/home/Untitled design.svg'; // Ensure correct path
+
 // Helper function for triggering animations with delay
-const useAnimationDelay = (delay) => {
+const useAnimationDelay = (delay: number) => {
   const [animate, setAnimate] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => setAnimate(true), delay);
