@@ -84,7 +84,6 @@ const ImpactSection = () => {
                   marginRight: 2, // Increased margin for spacing
                   '@media (max-width:600px)': {
                     display: 'none',
-
                   },
                 }}
               >
@@ -120,31 +119,34 @@ const ImpactSection = () => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.5, ease: 'easeOut', delay: 0.1 }}
             viewport={{ once: true }}
-            sx={{
-              '@media (max-width:600px)': {
-                display: 'none', // Hide this on mobile view
-              },
-            }}
           >
-            <Typography
-              variant="body1"
+            <Box
               sx={{
-                margin: '4rem 0 0 0',
-                fontFamily: 'Nunito',
-                fontSize: '32px',
-                fontWeight: '400',
-                lineHeight: '40px',
-                textAlign: 'justify',
-                textUnderlinePosition: 'from-font',
-                textDecorationSkipInk: 'none',
+                '@media (max-width:600px)': {
+                  display: 'none', // Hide this on mobile view
+                },
               }}
             >
-              Every drum you buy helps sustain Sri Lanka’s rich <br />
-              cultural heritage and supports local artisans. By <br />
-              owning a piece of this tradition, you’re contributing <br />
-              to a meaningful cause and preserving the legacy of <br />
-              Sri Lankan craftsmanship.
-            </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  margin: '4rem 0 0 0',
+                  fontFamily: 'Nunito',
+                  fontSize: '32px',
+                  fontWeight: '400',
+                  lineHeight: '40px',
+                  textAlign: 'justify',
+                  textUnderlinePosition: 'from-font',
+                  textDecorationSkipInk: 'none',
+                }}
+              >
+                Every drum you buy helps sustain Sri Lanka’s rich <br />
+                cultural heritage and supports local artisans. By <br />
+                owning a piece of this tradition, you’re contributing <br />
+                to a meaningful cause and preserving the legacy of <br />
+                Sri Lankan craftsmanship.
+              </Typography>
+            </Box>
           </motion.div>
         </Grid>
       </Grid>
