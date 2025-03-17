@@ -1,7 +1,8 @@
-import { Box, Grid, Typography, IconButton, Tooltip } from '@mui/material';
+import { Box, Grid, Typography, IconButton, Tooltip, useMediaQuery } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import HeroSection_mobile from './HeroSection_mobile'; // Import mobile view
 
 import bg_pic_main from '../../../public/images/home/Untitled design.svg'; // Ensure correct path
 import bg_pic_1 from '../../../public/images/home/hero_bg_pic_1.png'; // Ensure correct path
@@ -9,6 +10,13 @@ import bg_pic_2 from '../../../public/images/home/hero_bg_pic_2.jpeg'; // Ensure
 import bg_pic_3 from '../../../public/images/home/hero_bg_pic_3.jpeg'; // Ensure correct path
 
 const HeroSection = () => {
+    // Use media query to detect screen size
+    const isMobile = useMediaQuery('(max-width:600px)');
+
+    // If it's mobile view, render the mobile version of the component
+    if (isMobile) {
+        return <HeroSection_mobile />;
+    }
   return (
     <Box
       sx={{
