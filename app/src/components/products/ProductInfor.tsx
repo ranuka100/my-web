@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Grid, Typography, IconButton, Box, CardMedia, Card, CardContent, useMediaQuery } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import productsData from '../../data/Product_Details.json'; // Import the JSON file
-import ProductInfoMobile from './ProductInfor_mobile'; // Import mobile view
+import ProductInfoMobile from './ProductInfor_mobile'; // Assuming you have a separate mobile view component
 
 const ProductInfor = () => {
   const products = productsData.products;
@@ -10,6 +10,8 @@ const ProductInfor = () => {
   const [currentProductIndex, setCurrentProductIndex] = useState(0);
   const [mainImage, setMainImage] = useState(products[0].main_imageSrc);
   const currentProduct = products[currentProductIndex];
+  
+  const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down('sm')); // Ensure 'theme' is typed properly
 
   const smallImages = [
     currentProduct.main_imageSrc,
@@ -19,21 +21,12 @@ const ProductInfor = () => {
     currentProduct.img4_src,
   ];
 
-  // Use media query to detect screen size
-  const isMobile = useMediaQuery('(max-width:600px)');
-
-  // If it's mobile view, render the mobile version of the component
-  if (isMobile) {
-    return <ProductInfoMobile />;
-  }
-  // Update main image whenever the current product index changes
   useEffect(() => {
     setMainImage(currentProduct.main_imageSrc);
   }, [currentProductIndex]);
 
-  // Function to change main image on click
+  const handleImageClick = (image: string) => setMainImage(image); // No need for SetStateAction<string>
 
-  // Handle previous and next product
   const handlePrevProduct = () => {
     setCurrentProductIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : products.length - 1));
   };
@@ -42,12 +35,10 @@ const ProductInfor = () => {
     setCurrentProductIndex((prevIndex) => (prevIndex < products.length - 1 ? prevIndex + 1 : 0));
   };
 
-  // Handle clicking on a product in "Other Products"
   const handleProductClick = (index: number) => {
     setCurrentProductIndex(index);
   };
 
-  // Function to get the next 3 products for the "Other Products" section, excluding the current one
   const getOtherProducts = (currentIndex: number) => {
     const productCount = products.length;
     const nextProducts = [];
@@ -57,12 +48,10 @@ const ProductInfor = () => {
     return nextProducts;
   };
 
-  // Get the next 3 products for the "Other Products" section
   const displayedOtherProducts = getOtherProducts(currentProductIndex);
 
-
-  function handleImageClick(_image: string): void {
-    throw new Error('Function not implemented.');
+  if (isMobile) {
+    return <ProductInfoMobile />;
   }
 
   return (
