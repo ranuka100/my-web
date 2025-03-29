@@ -97,28 +97,39 @@ const DrumsSection = () => {
               >
                 {item.name}
               </Typography>
-              <Typography
-                variant="body2"
-                color="textSecondary"
-                paragraph
-                sx={{ fontSize: { xs: '16px', sm: '18px' } }}
-              >
-                {item.desc}
-              </Typography>
-              <Button
-                size="small"
-                sx={{
-                  color: '#B55C30',
-                  fontSize: { xs: '16px', sm: '18px' },
-                  '&:hover': {
-                    fontWeight: 'bold',
-                    color: 'rgb(218, 99, 40)',
-                    backgroundColor: 'transparent'
-                  }
-                }}
-              >
-                Learn More
-              </Button>
+<Typography
+  variant="body2"
+  color="textSecondary"
+  paragraph
+  sx={{
+    fontSize: { xs: '16px', sm: '18px' },
+    display: '-webkit-box',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: 3,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    textAlign: 'justify'  // Align text to justify
+  }}
+>
+  {item.desc}
+</Typography>
+
+<Button
+    size="small"
+    sx={{
+      color: '#B55C30',
+      fontSize: { xs: '16px', sm: '18px' },
+      '&:hover': {
+        fontWeight: 'bold',
+        color: 'rgb(218, 99, 40)',
+        backgroundColor: 'transparent',
+      },
+      alignSelf: { xs: 'center', sm: 'flex-end' }, // Center on mobile, right-align on larger screens
+    }}
+  >
+    Learn More
+  </Button>
+
             </Grid>
           </Grid>
         </Card>

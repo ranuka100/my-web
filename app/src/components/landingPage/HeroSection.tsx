@@ -108,12 +108,13 @@ const HeroSection = () => {
               mt: 4,
             }}
           >
-            Explore the rich history and unique sounds of Sri Lanka's drumming
+            Discover the rich history and captivating rhythms of Sri Lanka's drumming  
             <br></br>
-            heritage. Explore the rich history and unique sounds of Sri Lanka's
-            drumming<br></br>
-            heritage.
+            heritage. Experience the timeless beats and cultural essence of Sri Lanka's  
+            <br></br>
+            drumming heritage.  
           </Typography>
+
 
           {/* Social Media Icons */}
           <Box sx={{ display: 'flex', gap: 3, mt: 4, ml: -1 }}>

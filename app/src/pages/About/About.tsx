@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Box, Typography, Container } from '@mui/material';
+import { motion } from 'framer-motion'; // Import motion from framer-motion
 import Achievements from '../../components/Achievements';
 import ImageGallery from '../../components/common/ImageGallery';
 
@@ -21,7 +22,7 @@ const About = () => {
         {/* Main Container */}
         <Box
           sx={{
-            marginTop: { xs: '-8vh', md: '0px'},
+            marginTop: { xs: '-8vh', md: '0px' },
             position: 'relative',
             display: 'flex',
             flexDirection: { xs: 'column', md: 'row' },
@@ -56,34 +57,42 @@ const About = () => {
               </Typography>
 
               {/* Normal Text Paragraphs */}
-              <Typography
-                variant="body1"
-                paragraph
-                sx={{ textAlign: 'justify', fontSize: '20px' }}
-                >
-                At <strong>New Tharanga Musical Instruments</strong>, we are dedicated to preserving Sri Lanka’s 2,500-year-old tradition of crafting musical instruments. By blending time-honored techniques with modern innovations, we create high-quality, reliable products that musicians trust worldwide.
-                </Typography>
+              <motion.div initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
                 <Typography
-                variant="body1"
-                paragraph
-                sx={{ textAlign: 'justify', fontSize: '20px' }}
+                  variant="body1"
+                  paragraph
+                  sx={{ textAlign: 'justify', fontSize: '20px' }}
                 >
-                Our commitment to excellence has earned us prestigious national honors, including the <strong>"Rajatha Sammana"</strong> and the <strong>Presidential Award</strong> for the Most Outstanding Drum Designer in Sri Lanka for seven consecutive years.
+                  At <strong>New Tharanga Musical Instruments</strong>, we are dedicated to preserving Sri Lanka’s 2,500-year-old tradition of crafting musical instruments. By blending time-honored techniques with modern innovations, we create high-quality, reliable products that musicians trust worldwide.
                 </Typography>
+              </motion.div>
+              <motion.div initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
                 <Typography
-                variant="body1"
-                paragraph
-                sx={{ textAlign: 'justify', fontSize: '20px' }}
+                  variant="body1"
+                  paragraph
+                  sx={{ textAlign: 'justify', fontSize: '20px' }}
                 >
-                In addition to musical instruments, we pioneer <strong>sustainable handcrafted drum souvenirs</strong> using leftover materials. Through international collaborations with the <strong>National Crafts Council</strong> and the <strong>Tourism Promotion Bureau</strong>, we proudly showcase Sri Lankan artistry to the world.
+                  Our commitment to excellence has earned us prestigious national honors, including the <strong>"Rajatha Sammana"</strong> and the <strong>Presidential Award</strong> for the Most Outstanding Drum Designer in Sri Lanka for seven consecutive years.
                 </Typography>
+              </motion.div>
+              <motion.div initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
                 <Typography
-                variant="body1"
-                paragraph
-                sx={{ textAlign: 'justify', fontSize: '20px' }}
+                  variant="body1"
+                  paragraph
+                  sx={{ textAlign: 'justify', fontSize: '20px' }}
                 >
-                Choosing <strong>New Tharanga Musical Instruments</strong> means becoming part of a legacy that values quality, reliability, and the rich heritage of Sri Lankan craftsmanship.
+                  In addition to musical instruments, we pioneer <strong>sustainable handcrafted drum souvenirs</strong> using leftover materials. Through international collaborations with the <strong>National Crafts Council</strong> and the <strong>Tourism Promotion Bureau</strong>, we proudly showcase Sri Lankan artistry to the world.
                 </Typography>
+              </motion.div>
+              <motion.div initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.9 }}>
+                <Typography
+                  variant="body1"
+                  paragraph
+                  sx={{ textAlign: 'justify', fontSize: '20px' }}
+                >
+                  Choosing <strong>New Tharanga Musical Instruments</strong> means becoming part of a legacy that values quality, reliability, and the rich heritage of Sri Lankan craftsmanship.
+                </Typography>
+              </motion.div>
             </Box>
           </Box>
 
@@ -95,7 +104,7 @@ const About = () => {
               flex: 1,
               gap: 2,
               zIndex: 1,
-              marginTop: '20px'
+              marginTop: '20px',
             }}
           >
             {/* First Vertical Section */}
@@ -103,23 +112,35 @@ const About = () => {
               sx={{ display: 'flex', flexDirection: 'column', flex: 1, gap: 2 }}
             >
               {/* Top Section */}
-              <Box
-                sx={{ height: { xs: '250px', md: '400px' }, borderRadius: 2, overflow: 'hidden' }}
+              <motion.div
+                initial={{ x: 200, opacity: 0 }} 
+                animate={{ x: 0, opacity: 1 }} 
+                transition={{ duration: 1 }}
               >
-                <img
-                  src={pic1}
-                  alt="Drums"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-              </Box>
+                <Box
+                  sx={{ height: { xs: '250px', md: '400px' }, borderRadius: 2, overflow: 'hidden' }}
+                >
+                  <img
+                    src={pic1}
+                    alt="Drums"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </Box>
+              </motion.div>
               {/* Bottom Section */}
-              <Box sx={{ flex: 1, borderRadius: 2, overflow: 'hidden' }}>
-                <img
-                  src={pic2}
-                  alt="Craftsmanship"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-              </Box>
+              <motion.div
+                initial={{ x: 200, opacity: 0 }} 
+                animate={{ x: 0, opacity: 1 }} 
+                transition={{ duration: 1.1 }}
+              >
+                <Box sx={{ flex: 1, borderRadius: 2, overflow: 'hidden' }}>
+                  <img
+                    src={pic2}
+                    alt="Craftsmanship"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </Box>
+              </motion.div>
             </Box>
 
             {/* Second Vertical Section */}
@@ -127,29 +148,43 @@ const About = () => {
               sx={{ display: 'flex', flexDirection: 'column', flex: 1, gap: 2 }}
             >
               {/* Top Section */}
-              <Box sx={{ flex: 1, borderRadius: 2, overflow: 'hidden' }}>
-                <img
-                  src={pic3}
-                  alt="Culture"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-              </Box>
-              {/* Bottom Section */}
-              <Box
-                sx={{ height: { xs: '250px', md: '400px' }, borderRadius: 2, overflow: 'hidden' }}
+              <motion.div
+                initial={{ x: 200, opacity: 0 }} 
+                animate={{ x: 0, opacity: 1 }} 
+                transition={{ duration: 1.2 }}
               >
-                <img
-                  src={pic4}
-                  alt="Heritage"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-              </Box>
+                <Box sx={{ flex: 1, borderRadius: 2, overflow: 'hidden' }}>
+                  <img
+                    src={pic3}
+                    alt="Culture"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </Box>
+              </motion.div>
+              {/* Bottom Section */}
+              <motion.div
+                initial={{ x: 200, opacity: 0 }} 
+                animate={{ x: 0, opacity: 1 }} 
+                transition={{ duration: 1.3 }}
+              >
+                <Box
+                  sx={{ height: { xs: '250px', md: '400px' }, borderRadius: 2, overflow: 'hidden' }}
+                >
+                  <img
+                    src={pic4}
+                    alt="Heritage"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                </Box>
+              </motion.div>
             </Box>
           </Box>
         </Box>
+
         {/* Achievements Section */}
         <Achievements />{' '}
         {/* This will display the Achievements component content */}
+
         {/* YouTube Video Section */}
         <Box
           sx={{
@@ -165,14 +200,14 @@ const About = () => {
         >
           {isHovered ? (
             <iframe
-            width="100%"
-            height="100%"
-            src="https://drive.google.com/file/d/1UI3_qjAaANfVvKaUTTqfcnEkqsBbI3aw/preview"
-            title="Google Drive Video"
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          ></iframe>
+              width="100%"
+              height="100%"
+              src="https://drive.google.com/file/d/1UI3_qjAaANfVvKaUTTqfcnEkqsBbI3aw/preview"
+              title="Google Drive Video"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            ></iframe>
           ) : (
             <img
               src={yt_thumbamil}
@@ -185,6 +220,7 @@ const About = () => {
             />
           )}
         </Box>
+
         {/* ImageGallery Section */}
         <ImageGallery />{' '}
         {/*This will display the ImageGallery component content */}

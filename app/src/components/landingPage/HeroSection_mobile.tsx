@@ -143,7 +143,9 @@ const HeroSection = () => {
               transition: 'transform 1s ease-out, opacity 1s ease-out',
             }}
           >
-            Immerse yourself in the vibrant beats and timeless traditions of Sri Lanka’s drumming heritage where rhythm tells a story and echoes through generations.
+            Discover the rich history and captivating rhythms of Sri Lanka's drumming
+heritage. Experience the timeless beats and cultural essence of Sri Lanka's
+drumming heritage.
           </Typography>
 
           {/* Social Media Icons */}

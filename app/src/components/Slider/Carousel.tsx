@@ -9,42 +9,45 @@ import { Autoplay } from 'swiper/modules';
 const Carousel = () => {
   const slides = [
     {
-      imageSrc: '/images/products/davula/IMG_6755.jpg', // Updated image link
-      title: 'Geta Bera sadsasd',
+      imageSrc: '/images/home/procuts_slider/IMG-20250321-WA0009.jpg',
+      title: 'Drums Product 01',
       description:
-        'A beautifully crafted miniature of the iconic Geta Bera, designed with intricate details that reflect its ceremonial importance.',
-      material: 'Premium mahogany wood with hand-painted lacquer designs.',
-      size: '10 cm tall, 5 cm wide',
-      link: '/learn-more',
+        'These products showcase all items within a lampshade, as shown in the image. All items are beautifully arranged, creating an attractive display similar to the one in the image.',
+      material: 'Premium mahogany wood and hand-painted lacquer.',
+      size:  " 40 cm (H) x 26 cm (W)",
+      Weight: "800 g – Lightweight yet durable, perfect for display or gifting.",
+      link: '/product', // Remove leading space
     },
     {
-      imageSrc: '/images/products/Thammattama/IMG_6775.jpg', // Updated image link
-      title: 'Another Souvenir',
-      description:
-        'This souvenir showcases intricate designs that highlight cultural significance.',
+      imageSrc: '/images/home/procuts_slider/IMG-20250321-WA0010.jpg',
+      title: 'Drums Product 02',
+      description: 'This shows all products displayed separately, each labeled with the relevant item name as shown in the image. These are available as a single framed product.',
       material: 'Hand-carved rosewood with lacquer finish.',
-      size: '15 cm tall, 7 cm wide',
-      link: '/learn-more',
+      size:  "27.5 cm (L) × 19.2 cm (W) × 4.5 cm (H)",
+      Weight: "810 g – Lightweight yet durable, perfect for display or gifting.",
+      link: '/product', // Remove leading space
     },
+    
     {
-      imageSrc: '/images/products/getaberaya/ASH06860.jpg', // Updated image link
-      title: 'Traditional Art',
-      description:
-        'A stunning piece of traditional art, capturing the essence of history and craftsmanship.',
+      imageSrc: '/images/home/procuts_slider/IMG-20250321-WA0011.jpg',
+      title: 'Drums Product 03',
+      description:'This shows all products displayed separately, without labeled item names. The products are arranged vertically, one by one, and are available as a single framed product.',
       material: 'Canvas with hand-painted details.',
-      size: '20 cm x 30 cm',
-      link: '/learn-more',
+      size:  "27.5 cm (L) × 19.2 cm (W) × 1.8 cm (H)",
+      Weight: "500 g – Lightweight yet durable, perfect for display or gifting.",
+      link: '/product', // Remove leading space
     },
     {
-      imageSrc: '/images/products/pahatharata_beraya/IMG_6752.jpg', // Updated image link
-      title: 'Pahatharata Beraya',
-      description:
-        'A beautiful depiction of the cultural symbol, showcasing traditional artistry.',
+      imageSrc: '/images/home/procuts_slider/IMG-20250321-WA0012.jpg',
+      title: 'Drums Product 04',
+      description: "This shows the available product as a single item with a frame, along with all products in the same view as the displayed product. Davula, Thammatama, Getaberaya, and Pahatharata Beraya are available.",
       material: 'Premium quality wood with intricate carvings.',
-      size: '12 cm tall, 6 cm wide',
-      link: '/learn-more',
+      size:  "19.3 cm (L) × 15.5 cm (W) × 1.8 cm (H)",
+      Weight: "210 g – Lightweight yet durable, perfect for display or gifting.",
+      link: '/product', // Remove leading space
     },
   ];
+  
 
   const { isXl, isMd, isSm, isXs } = useBreakpointMode();
 
@@ -83,6 +86,7 @@ const Carousel = () => {
             alignSelf: 'center',
             height: '50%',
             overflow: 'hidden',
+            
           }}
         >
           <CarouselSlide {...slide} />
