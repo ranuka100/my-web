@@ -12,7 +12,7 @@ import achievementsData from '../pages/About/AchievementsData.json';
 const Achievements = () => {
   const [achievements, setAchievements] = useState<any[]>([]); 
   const [isVisible, setIsVisible] = useState(false); // State to control animation trigger
-  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset); // Track previous scroll position
+  const [, setPrevScrollPos] = useState(window.pageYOffset); // Track previous scroll position
   const [hasScrolledToSection, setHasScrolledToSection] = useState(false); // State to track if section is in view
 
   // On component mount, load the data (assuming data is already imported)
@@ -24,7 +24,6 @@ const Achievements = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      const sectionOffset = 200; // Offset to trigger the animation
 
       // Calculate if the section is in the viewport based on window's inner height
       const sectionTop = document.getElementById('achievements-section')?.getBoundingClientRect().top || 0;
