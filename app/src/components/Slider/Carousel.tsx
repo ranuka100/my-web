@@ -40,7 +40,7 @@ const Carousel = () => {
     {
       imageSrc: '/images/home/procuts_slider/IMG-20250321-WA0012.jpg',
       title: 'Drums Product 04',
-      description: "This shows the available product as a single item with a frame, along with all products in the same view as the displayed product. Davula, Thammatama, Getaberaya, and Pahatharata Beraya are available.",
+      description: "This shows the available product as a single item, along with all other related products displayed in the same view. All four drums are available for purchase.",
       // material: 'Premium quality wood with intricate carvings.',
       size:  "19.3 cm (L) × 15.5 cm (W) × 1.8 cm (H)",
       Weight: "210 g – Lightweight yet durable, perfect for display or gifting.",

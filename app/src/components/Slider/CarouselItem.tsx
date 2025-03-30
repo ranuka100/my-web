@@ -148,7 +148,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
                 /* or 157% */
                 textAlign: 'justify',
                 color: '#000000',
-                marginBottom:{ xs: '40%', md: '-85px' },
+                marginBottom:{ xs: '20%', md: '-85px' },
                 /* Inside auto layout */
                 flex: 'none',
                 order: 1,
