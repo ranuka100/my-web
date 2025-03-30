@@ -98,7 +98,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
                 flexGrow: 0,
                 display: 'block',
                 fontSize: { xs: '20px', md: '20px' },
-                marginTop: { xs: '-6%', md: '10px' },
+                marginTop: { xs: '-2%', md: '10px' },
               }}
             >
               Souvenirs
