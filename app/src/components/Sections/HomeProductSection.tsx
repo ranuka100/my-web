@@ -26,13 +26,15 @@ const HomeProductSection = () => {
               sx={{
                 fontFamily: 'Poppins',
                 fontWeight: 500,
-                fontSize: { xs: '32px', md: '44px' },
+                fontSize: { xs: '42px', md: '54px' },
                 lineHeight: { xs: '40px', md: '66px' },
                 color: '#2D2424',
                 flex: 'none',
                 order: 0,
                 alignSelf: 'stretch',
                 flexGrow: 0,
+                marginTop: { xs: '10%', md: '20%' },
+                
               }}
             >
               Crafted with Tradition Designed to Impress
@@ -40,10 +42,10 @@ const HomeProductSection = () => {
             <Typography
               variant="body1"
               sx={{
-                mt: '10px',
+                marginTop: { xs: '10%', md: '2%' },
                 fontFamily: 'Poppins',
-                fontWeight: 400,
-                fontSize: { xs: '16px', md: '20px' },
+                fontWeight: 300,
+                fontSize: { xs: '20px', md: '24px' },
                 lineHeight: { xs: '24px', md: '30px' },
                 textAlign: 'justify',
                 color: '#000000',

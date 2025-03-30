@@ -6,7 +6,7 @@ interface CarouselSlideProps {
   imageSrc: string;
   title: string;
   description: string;
-  material: string;
+  // material: string;
   size: string;
   link: string;
 }
@@ -15,7 +15,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
   imageSrc,
   title,
   description,
-  material,
+  // material,
   size,
   link,
 }) => {
@@ -24,25 +24,26 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
   const { isSm, isMd } = useBreakpointMode();
   return (
     <Box
-      sx={{
-        width: '100%',
-        alignSelf: 'center',
-        justifyContent: 'left',
-        justifyItems: 'center',
-        height: { xs: 'auto' },
-        display: 'flex',
-        bgcolor: '#ffff',
-        borderRadius: 2,
-        boxShadow: 2,
-        overflow: 'hidden', // Prevent content overflow
-        transition: theme.transitions.create(['transform', 'box-shadow'], {
-          duration: theme.transitions.duration.short,
-        }),
-        '&:hover': {
-          transform: 'translateY(-4px)',
-          boxShadow: 4,
-        },
-      }}
+    sx={{
+      width: '100%',
+      alignSelf: 'center',
+      justifyContent: 'left',
+      justifyItems: 'center',
+      height: { xs: 'auto' },
+      display: 'flex',
+      bgcolor: '#ffff',
+      borderRadius: 2,
+      boxShadow: 2,
+      overflow: 'hidden', // Prevent content overflow
+      transition: theme.transitions.create(['transform', 'box-shadow'], {
+        duration: 5000, // Set duration to 5 seconds (5000ms)
+      }),
+      '&:hover': {
+        transform: 'translateY(-5px)',
+        boxShadow: 4,
+      },
+    }}
+    
     >
       <Grid container spacing={2} sx={{ height: '100%' }}>
         <Grid
@@ -96,7 +97,8 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
                 alignSelf: 'stretch',
                 flexGrow: 0,
                 display: 'block',
-                fontSize: { xs: '0.7rem', sm: '0.75rem' },
+                fontSize: { xs: '20px', md: '20px' },
+                marginTop: { xs: '-6%', md: '10px' },
               }}
             >
               Souvenirs
@@ -109,11 +111,11 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
                 /* Geta Bera Miniature */
                 width: '202.62px',
                 height: '25px',
-
+                marginTop: '10px',
                 fontFamily: 'Poppins',
                 fontStyle: 'normal',
                 fontWeight: 600,
-                fontSize: '19.9301px',
+                fontSize: { xs: '25px', md: '24px' },
                 lineHeight: '24px',
                 /* identical to box height, or 122% */
                 textTransform: 'capitalize',
@@ -135,25 +137,24 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
               color="text.secondary"
               sx={{
                 /* A beautifully crafted miniature of the iconic Geta Bera, designed with intricate details that reflect its ceremonial importance. */
-
-                width: '360.96px',
+                width: { xs: '100%', md: '400px' },
                 height: '74px',
-
+                marginTop: '10px',
                 fontFamily: 'Poppins',
                 fontStyle: 'normal',
                 fontWeight: 400,
-                fontSize: '15.5012px',
+                fontSize: { xs: '20px', md: '18px' },
                 lineHeight: '24px',
                 /* or 157% */
                 textAlign: 'justify',
-
                 color: '#000000',
-
+                marginBottom:{ xs: '40%', md: '-85px' },
                 /* Inside auto layout */
                 flex: 'none',
                 order: 1,
                 alignSelf: 'stretch',
                 flexGrow: 0,
+                
               }}
             >
               {description}
@@ -161,32 +162,27 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
           </Box>
 
           <Box>
-            <Box sx={{ mb: 1 }}>
+            <Box sx={{ mb: 0 }}>
               <Typography
                 component="span"
                 variant="body2"
                 sx={{
                   /* Material */
-
                   width: '360.96px',
                   height: '23px',
-
                   fontFamily: 'Poppins',
                   fontStyle: 'normal',
                   fontWeight: 600,
                   fontSize: '15.5012px',
                   lineHeight: '23px',
-
                   color: '#000000',
-
-                  /* Inside auto layout */
                   flex: 'none',
                   order: 0,
                   alignSelf: 'stretch',
                   flexGrow: 0,
                 }}
               >
-                Material
+                {/* Material */}
               </Typography>
               <br />
               <Typography
@@ -209,7 +205,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
                   flexGrow: 0,
                 }}
               >
-                {material}
+                {/* {material} */}
               </Typography>
             </Box>
 
@@ -222,15 +218,13 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
 
                   width: '31px',
                   height: '23px',
-
                   fontFamily: 'Poppins',
                   fontStyle: 'normal',
                   fontWeight: 600,
                   fontSize: '15.5012px',
                   lineHeight: '23px',
-
+                  marginTop: { xs: '60px', md: '-90px' },
                   color: '#000000',
-
                   /* Inside auto layout */
                   flex: 'none',
                   order: 0,
