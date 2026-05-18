@@ -8,14 +8,14 @@ This document covers everything **still to do**: manual steps, assets, performan
 
 ## Quick summary
 
-| Category | Who | When |
-|----------|-----|------|
-| Deploy + Search Console | You / marketing | After site is live |
-| OG images + social links | Design / marketing | Before major ad campaigns |
-| Image compression | Dev or design | Before launch (recommended) |
-| GSC / Bing tokens | You | After property created |
-| Lighthouse audit | Dev | After deploy |
-| Phase 2 (prerender, product URLs, blog) | Dev | When you need more traffic |
+| Category                                | Who                | When                        |
+| --------------------------------------- | ------------------ | --------------------------- |
+| Deploy + Search Console                 | You / marketing    | After site is live          |
+| OG images + social links                | Design / marketing | Before major ad campaigns   |
+| Image compression                       | Dev or design      | Before launch (recommended) |
+| GSC / Bing tokens                       | You                | After property created      |
+| Lighthouse audit                        | Dev                | After deploy                |
+| Phase 2 (prerender, product URLs, blog) | Dev                | When you need more traffic  |
 
 ---
 
@@ -25,13 +25,13 @@ This document covers everything **still to do**: manual steps, assets, performan
 
 Replace `tharangadrums.lk` with your real domain if different.
 
-| URL | Expected |
-|-----|----------|
-| `https://tharangadrums.lk/robots.txt` | Shows `Allow: /` and Sitemap line |
-| `https://tharangadrums.lk/sitemap.xml` | Lists `/`, `/product`, `/about` |
-| `https://tharangadrums.lk/` | Home loads |
-| `https://tharangadrums.lk/product` | Products (direct URL, refresh OK) |
-| `https://tharangadrums.lk/about` | About (direct URL, refresh OK) |
+| URL                                    | Expected                          |
+| -------------------------------------- | --------------------------------- |
+| `https://tharangadrums.lk/robots.txt`  | Shows `Allow: /` and Sitemap line |
+| `https://tharangadrums.lk/sitemap.xml` | Lists `/`, `/product`, `/about`   |
+| `https://tharangadrums.lk/`            | Home loads                        |
+| `https://tharangadrums.lk/product`     | Products (direct URL, refresh OK) |
+| `https://tharangadrums.lk/about`       | About (direct URL, refresh OK)    |
 
 Netlify SPA redirect is already in `app/netlify.toml` (`/*` → `index.html`).
 
@@ -77,17 +77,17 @@ VITE_BING_VERIFICATION=paste-bing-token-here
 
 Test each live URL:
 
-| Tool | URLs to test |
-|------|----------------|
+| Tool                                                             | URLs to test              |
+| ---------------------------------------------------------------- | ------------------------- |
 | [Rich Results Test](https://search.google.com/test/rich-results) | `/`, `/product`, `/about` |
 
 **Expected schemas:**
 
-| Page | Schema types |
-|------|----------------|
-| `/` | WebSite, LocalBusiness |
+| Page       | Schema types                                      |
+| ---------- | ------------------------------------------------- |
+| `/`        | WebSite, LocalBusiness                            |
 | `/product` | LocalBusiness, ItemList (Product), BreadcrumbList |
-| `/about` | LocalBusiness, BreadcrumbList |
+| `/about`   | LocalBusiness, BreadcrumbList                     |
 
 Fix any errors in `app/src/seo/schema/` and redeploy.
 
@@ -99,12 +99,12 @@ Fix any errors in `app/src/seo/schema/` and redeploy.
 2. **View Page Source** (or DevTools → Elements → `<head>`).
 3. Confirm you see (from React Helmet after JS runs; for crawlers, consider prerender in Phase 2):
 
-| Tag | Example (home) |
-|-----|----------------|
-| `<title>` | Handcrafted Sri Lankan Drum Souvenirs \| Tharanga Drums |
-| `meta name="description"` | Award-winning miniature... |
-| `link rel="canonical"` | `https://tharangadrums.lk` |
-| `og:title`, `og:image`, `og:url` | Present |
+| Tag                              | Example (home)                                          |
+| -------------------------------- | ------------------------------------------------------- |
+| `<title>`                        | Handcrafted Sri Lankan Drum Souvenirs \| Tharanga Drums |
+| `meta name="description"`        | Award-winning miniature...                              |
+| `link rel="canonical"`           | `https://tharangadrums.lk`                              |
+| `og:title`, `og:image`, `og:url` | Present                                                 |
 
 **Tip:** Use [Meta Tags Debugger](https://developers.facebook.com/tools/debug/) for OG preview after deploy.
 
@@ -117,12 +117,12 @@ Fix any errors in `app/src/seo/schema/` and redeploy.
 **Current:** OG images use existing product photos from `pageMeta.ts`.  
 **Target:** Custom 1200×630 JPG/PNG per main page.
 
-| File to create | Suggested content |
-|----------------|-----------------|
-| `app/public/images/og/home-og.jpg` | Hero + logo “Beats of Heritage” |
-| `app/public/images/og/product-og.jpg` | Product lineup or Davula hero |
-| `app/public/images/og/about-og.jpg` | Workshop / awards |
-| `app/public/images/og/default-og.jpg` | Brand fallback |
+| File to create                        | Suggested content               |
+| ------------------------------------- | ------------------------------- |
+| `app/public/images/og/home-og.jpg`    | Hero + logo “Beats of Heritage” |
+| `app/public/images/og/product-og.jpg` | Product lineup or Davula hero   |
+| `app/public/images/og/about-og.jpg`   | Workshop / awards               |
+| `app/public/images/og/default-og.jpg` | Brand fallback                  |
 
 Then update `app/src/seo/pageMeta.ts`:
 
@@ -153,13 +153,13 @@ Also add the same URLs to `app/src/seo/schema/LocalBusinessJsonLd.tsx` → `same
 1. Create or claim [Google Business Profile](https://business.google.com).
 2. Use **exact** NAP (name, address, phone) as on the website:
 
-| Field | Site value |
-|-------|------------|
-| Name | New Tharanga Musical Instruments / Tharanga Drums |
-| Address | NO. 34, Kandy Road, Nittambuwa, Sri Lanka |
-| Phone | +94 77 338 8998 |
-| Email | info@tharangadrums.lk |
-| Website | https://tharangadrums.lk |
+| Field   | Site value                                        |
+| ------- | ------------------------------------------------- |
+| Name    | New Tharanga Musical Instruments / Tharanga Drums |
+| Address | NO. 34, Kandy Road, Nittambuwa, Sri Lanka         |
+| Phone   | +94 77 338 8998                                   |
+| Email   | info@tharangadrums.lk                             |
+| Website | https://tharangadrums.lk                          |
 
 3. Add photos, hours, and category (e.g. Musical instrument store / Artisan).
 
@@ -171,11 +171,11 @@ Large files in `public/images/` hurt LCP. Compress before or right after launch.
 
 ### 3.1 Priority files to compress
 
-| Path (approx.) | Issue |
-|----------------|--------|
-| `public/images/home/hero_bg_pic_2.jpeg` | Very large (~9MB+) |
-| `public/images/home/Untitled design.svg` | Very large SVG |
-| `public/images/home/hero_bg_pic_1.png` | Large PNG |
+| Path (approx.)                               | Issue               |
+| -------------------------------------------- | ------------------- |
+| `public/images/home/hero_bg_pic_2.jpeg`      | Very large (~9MB+)  |
+| `public/images/home/Untitled design.svg`     | Very large SVG      |
+| `public/images/home/hero_bg_pic_1.png`       | Large PNG           |
 | Product JPGs under `public/images/products/` | Many multi-MB files |
 
 ### 3.2 How to compress
@@ -217,12 +217,12 @@ npx lighthouse http://localhost:4173/about --only-categories=seo --view
 
 **Targets (mobile):**
 
-| Metric | Good |
-|--------|------|
-| LCP | ≤ 2.5 s |
-| INP | ≤ 200 ms |
-| CLS | ≤ 0.1 |
-| SEO score | ≥ 90 |
+| Metric    | Good     |
+| --------- | -------- |
+| LCP       | ≤ 2.5 s  |
+| INP       | ≤ 200 ms |
+| CLS       | ≤ 0.1    |
+| SEO score | ≥ 90     |
 
 Save reports to `project-spec/docs/seo/reports/` (create folder) with date in filename, e.g. `lighthouse-2026-05-18-home.json`.
 
@@ -238,11 +238,11 @@ Save reports to `project-spec/docs/seo/reports/` (create folder) with date in fi
 
 ### 4.2 Environment variables reference
 
-| Variable | Purpose | Required |
-|----------|---------|----------|
-| `VITE_SITE_URL` | Canonical, sitemap, JSON-LD | Yes (set in `.env.production`) |
-| `VITE_GSC_VERIFICATION` | Google Search Console HTML tag | After GSC setup |
-| `VITE_BING_VERIFICATION` | Bing Webmaster HTML tag | Optional |
+| Variable                 | Purpose                        | Required                       |
+| ------------------------ | ------------------------------ | ------------------------------ |
+| `VITE_SITE_URL`          | Canonical, sitemap, JSON-LD    | Yes (set in `.env.production`) |
+| `VITE_GSC_VERIFICATION`  | Google Search Console HTML tag | After GSC setup                |
+| `VITE_BING_VERIFICATION` | Bing Webmaster HTML tag        | Optional                       |
 
 Copy from `app/.env.example` → `app/.env` for local; set same keys in **Netlify → Environment variables** for production.
 
@@ -256,10 +256,10 @@ Copy from `app/.env.example` → `app/.env` for local; set same keys in **Netlif
 
 **Options:**
 
-| Approach | Effort |
-|----------|--------|
+| Approach                | Effort                                       |
+| ----------------------- | -------------------------------------------- |
 | `vite-plugin-prerender` | Medium — prerender `/`, `/product`, `/about` |
-| Migrate to Next.js | High — full SSR/SSG |
+| Migrate to Next.js      | High — full SSR/SSG                          |
 
 See [react-spec/SEO.md](../../react-spec/SEO.md) §2.
 
@@ -322,29 +322,29 @@ Only if you add Sinhala (`si`) or Tamil (`ta`) pages:
 
 ## 7. Who does what
 
-| Task | Owner |
-|------|--------|
-| Deploy, env vars, sitemap submit | Dev / hosting |
-| GSC, Bing, Business Profile | Marketing / owner |
-| OG image design | Design |
-| Image compression | Dev or design |
-| Social URLs, copy updates | Marketing |
-| Phase 2 prerender / product URLs | Dev |
-| Monthly GSC review | Marketing |
+| Task                             | Owner             |
+| -------------------------------- | ----------------- |
+| Deploy, env vars, sitemap submit | Dev / hosting     |
+| GSC, Bing, Business Profile      | Marketing / owner |
+| OG image design                  | Design            |
+| Image compression                | Dev or design     |
+| Social URLs, copy updates        | Marketing         |
+| Phase 2 prerender / product URLs | Dev               |
+| Monthly GSC review               | Marketing         |
 
 ---
 
 ## 8. Related docs
 
-| Document | Purpose |
-|----------|---------|
-| [IMPLEMENTATION_CHECKLIST.md](./IMPLEMENTATION_CHECKLIST.md) | What’s done in code |
-| [AUDIT_REPORT.md](./AUDIT_REPORT.md) | Baseline audit |
-| [meta-tags-sitemap-robots.md](./meta-tags-sitemap-robots.md) | Technical reference |
-| [structured-data.md](./structured-data.md) | JSON-LD reference |
-| [performance-headings-images.md](./performance-headings-images.md) | CWV & images |
-| [../../react-spec/SEO.md](../../react-spec/SEO.md) | Full SEO specification |
+| Document                                                           | Purpose                |
+| ------------------------------------------------------------------ | ---------------------- |
+| [IMPLEMENTATION_CHECKLIST.md](./IMPLEMENTATION_CHECKLIST.md)       | What’s done in code    |
+| [AUDIT_REPORT.md](./AUDIT_REPORT.md)                               | Baseline audit         |
+| [meta-tags-sitemap-robots.md](./meta-tags-sitemap-robots.md)       | Technical reference    |
+| [structured-data.md](./structured-data.md)                         | JSON-LD reference      |
+| [performance-headings-images.md](./performance-headings-images.md) | CWV & images           |
+| [../../react-spec/SEO.md](../../react-spec/SEO.md)                 | Full SEO specification |
 
 ---
 
-*Update this file when tasks are completed or scope changes.*
+_Update this file when tasks are completed or scope changes._

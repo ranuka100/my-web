@@ -1,24 +1,20 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { getSiteRoutes } from './seo-routes.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SITE_URL = process.env.VITE_SITE_URL || 'https://tharangadrums.lk';
 
-const productsJson = JSON.parse(
-  readFileSync(join(__dirname, '../src/data/Product_Details.json'), 'utf8')
-);
+const priorityByPath = (loc) => {
+  if (loc === '/') return { changefreq: 'weekly', priority: '1.0' };
+  if (loc === '/product') return { changefreq: 'weekly', priority: '0.9' };
+  if (loc.startsWith('/product/')) return { changefreq: 'weekly', priority: '0.85' };
+  if (loc === '/about') return { changefreq: 'monthly', priority: '0.8' };
+  return { changefreq: 'weekly', priority: '0.5' };
+};
 
-const routes = [
-  { loc: '/', changefreq: 'weekly', priority: '1.0' },
-  { loc: '/product', changefreq: 'weekly', priority: '0.9' },
-  ...productsJson.products.map((p) => ({
-    loc: `/product/${p.slug}`,
-    changefreq: 'weekly',
-    priority: '0.85',
-  })),
-  { loc: '/about', changefreq: 'monthly', priority: '0.8' },
-];
+const routes = getSiteRoutes().map((loc) => ({ loc, ...priorityByPath(loc) }));
 
 const lastmod = new Date().toISOString().split('T')[0];
 

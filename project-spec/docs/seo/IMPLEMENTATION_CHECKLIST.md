@@ -113,5 +113,5 @@ Use with [react-spec/SEO.md](../../react-spec/SEO.md). Check off as completed.
 - [x] Sitemap includes product slug URLs
 - [x] `SeoImage` component + hero dimensions
 - [x] `npm run optimize-images` script (requires `sharp`)
-- [ ] Prerender `/`, `/product`, `/about` at build
+- [x] Prerender `/`, `/product`, `/about`, and `/product/:slug` at build (`scripts/prerender.mjs`, `postbuild`)
 - [ ] Blog routes + Article schema

@@ -1,3 +1,5 @@
+# Prerendered HTML exists at /, /product, /about, /product/:slug (postbuild).
+# Netlify serves those files first; this fallback handles client-side navigation.
 [[redirects]]
   from = "/*"
   to = "/index.html"
