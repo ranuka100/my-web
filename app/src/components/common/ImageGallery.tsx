@@ -3,6 +3,7 @@ import { Grid, Typography } from '@mui/material';
 
 // Import JSON data directly (no need for fetch)
 import imageData from '../../pages/About/ImageGalleryData.json';
+import { resolvePublicImage } from '../../utils/imagePaths';
 
 const ImageGallery = () => {
   const [images] = useState(imageData);
@@ -41,7 +42,7 @@ const ImageGallery = () => {
           <Grid item key={index} xs={12} sm={6} md={3}>
             <Grid
               component="img"
-              src={image.src}
+              src={resolvePublicImage(image.src)}
               alt={image.alt}
               sx={{
                 width: '100%',

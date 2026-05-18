@@ -1,12 +1,21 @@
 import { useState, useEffect, SetStateAction } from 'react';
-import { Grid, Typography, IconButton, Box, CardMedia, Card, CardContent } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { Grid, Typography, IconButton, Box, Card, CardContent } from '@mui/material';
+import OptimizedCardMedia from '../common/OptimizedCardMedia';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
-import productsData from '../../data/Product_Details.json'; // Import the JSON file
+import { products, getProductIndexBySlug, getProductPath } from '../../data/productUtils';
 
-const ProductInfoMobile = () => {
-  const products = productsData.products;
+type ProductInfoMobileProps = {
+  initialSlug?: string;
+};
 
-  const [currentProductIndex, setCurrentProductIndex] = useState(0);
+const ProductInfoMobile = ({ initialSlug }: ProductInfoMobileProps) => {
+  const navigate = useNavigate();
+  const initialIndex = initialSlug ? getProductIndexBySlug(initialSlug) : 0;
+
+  const [currentProductIndex, setCurrentProductIndex] = useState(
+    initialIndex >= 0 ? initialIndex : 0
+  );
   const [mainImage, setMainImage] = useState(products[0].main_imageSrc);
   const currentProduct = products[currentProductIndex];
   
@@ -22,15 +31,34 @@ const ProductInfoMobile = () => {
   // Update main image whenever the current product index changes
   useEffect(() => {
     setMainImage(currentProduct.main_imageSrc);
-  }, [currentProductIndex]);
+  }, [currentProductIndex, currentProduct.main_imageSrc]);
+
+  useEffect(() => {
+    if (initialSlug) {
+      const idx = getProductIndexBySlug(initialSlug);
+      if (idx >= 0) setCurrentProductIndex(idx);
+    }
+  }, [initialSlug]);
 
   const handleImageClick = (image: SetStateAction<string>) => setMainImage(image);
-  const handlePrevProduct = () => setCurrentProductIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : products.length - 1));
-  const handleNextProduct = () => setCurrentProductIndex((prevIndex) => (prevIndex < products.length - 1 ? prevIndex + 1 : 0));
 
-  // Handle click on other products
-  const handleOtherProductClick = (index: SetStateAction<number>) => {
-    setCurrentProductIndex(index); // Update the current product to the clicked one
+  const goToProductIndex = (index: number) => {
+    setCurrentProductIndex(index);
+    navigate(getProductPath(products[index].slug));
+  };
+
+  const handlePrevProduct = () => {
+    const next = currentProductIndex > 0 ? currentProductIndex - 1 : products.length - 1;
+    goToProductIndex(next);
+  };
+
+  const handleNextProduct = () => {
+    const next = currentProductIndex < products.length - 1 ? currentProductIndex + 1 : 0;
+    goToProductIndex(next);
+  };
+
+  const handleOtherProductClick = (index: number) => {
+    goToProductIndex(index);
   };
 
   const getOtherProducts = (currentIndex: number) => {
@@ -66,7 +94,7 @@ const ProductInfoMobile = () => {
     <Grid container spacing={2} sx={{ padding: '15px' }}>
       {/* Product Name */}
       <Grid item xs={12}>
-        <Typography variant="h5" sx={{ textAlign: 'center', fontWeight: 'bold', marginTop: '15px' }}>
+        <Typography component="h1" variant="h5" sx={{ textAlign: 'center', fontWeight: 'bold', marginTop: '15px' }}>
           {currentProduct.name}
         </Typography>
       </Grid>
@@ -92,10 +120,10 @@ const ProductInfoMobile = () => {
                   }}
                   onClick={() => handleImageClick(image)} // Update image on click
                 >
-                  <CardMedia
-                    component="img"
-                    alt={`Image ${index + 1}`}
+                  <OptimizedCardMedia
+                    alt={`${currentProduct.name} — detail view ${index + 1}`}
                     image={image}
+                    loading="lazy"
                     sx={{ objectFit: 'cover', height: '100%', width: '100%' }}
                   />
                 </Card>
@@ -106,10 +134,9 @@ const ProductInfoMobile = () => {
 
         {/* Right Side: Product Image */}
         <Grid item xs={9} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <CardMedia
-            component="img"
+          <OptimizedCardMedia
             alt={currentProduct.name}
-            image={mainImage} // Use the mainImage state here to display the clicked image
+            image={mainImage}
             sx={{ width: '100%', maxHeight: '600px', objectFit: 'contain', borderRadius: '10px' }}
           />
         </Grid>
@@ -167,13 +194,15 @@ const ProductInfoMobile = () => {
           Other Products
         </Typography>
 
-        <Grid container spacing={1} justifyContent="center">
+        <Grid container spacing={2} justifyContent="center" sx={{ width: '100%', px: 1 }}>
           {displayedOtherProducts.map((product, index) => (
-            <Grid item xs={4} key={index}>
+            <Grid item xs={12} sm={4} key={product.product_id ?? index} sx={{ minWidth: 0, display: 'flex' }}>
   <Card
     sx={{
       width: '100%',
-      height: '170px',
+      flex: 1,
+      height: 'auto',
+      minHeight: 170,
       boxShadow: '0px 4px 6px rgba(56, 53, 53, 0.62)',
       backgroundColor: 'transparent',
       '&:hover': {
@@ -182,8 +211,7 @@ const ProductInfoMobile = () => {
     }}
     onClick={() => handleOtherProductClick((currentProductIndex + index + 1) % products.length)}
   >
-    <CardMedia
-      component="img"
+    <OptimizedCardMedia
       alt={product.name}
       image={product.home_imageSrc}
       sx={{
@@ -199,9 +227,7 @@ const ProductInfoMobile = () => {
           width: '100%',
           textAlign: 'center',
           color: 'black',
-          marginTop: '-5vh',
-          marginRight: '70px',
-          marginLeft: '0px', // Added left margin
+          mt: 0.5,
         }}
       >
         {product.name}

@@ -10,6 +10,7 @@ const AppRoutingSetup = () => {
       <Route element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/product/:slug" element={<Product />} />
         <Route path="/about" element={<About />} />
       </Route>
     </Routes>

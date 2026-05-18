@@ -18,10 +18,8 @@ const useAnimationDelay = (delay: number) => {
 
 const HeroSection = () => {
   // Delays for each animation sequence
-  const animateText = useAnimationDelay(500);  // Delay for "Experience The"
-  const animateRhythm = useAnimationDelay(1000);  // Delay for "Rhythm of"
-  const animateTradition = useAnimationDelay(1800);  // Delay for "Tradition"
-  const animateDescription = useAnimationDelay(2600);  // Delay for description
+  const animateText = useAnimationDelay(500);
+  const animateDescription = useAnimationDelay(2600);
   const animateSocialIcons = useAnimationDelay(3500);  // Delay for social icons
 
   return (
@@ -75,6 +73,7 @@ const HeroSection = () => {
           }}
         >
           <Typography
+            component="h1"
             sx={{
               fontFamily: 'Raleway',
               fontSize: '40px',
@@ -88,43 +87,7 @@ const HeroSection = () => {
               transition: 'transform 1s ease-out, opacity 1s ease-out',
             }}
           >
-            Experience The
-          </Typography>
-
-          <Typography
-            sx={{
-              fontFamily: 'Raleway',
-              fontSize: '45px',
-              fontWeight: 600,
-              lineHeight: '70px',
-              textAlign: 'left',
-              textUnderlinePosition: 'from-font',
-              textDecorationSkipInk: 'none',
-              color: '#FFFFFF',
-              transform: animateRhythm ? 'translateY(0)' : 'translateY(50px)',
-              opacity: animateRhythm ? 1 : 0,
-              transition: 'transform 1s ease-out, opacity 1s ease-out',
-            }}
-          >
-            Rhythm of
-          </Typography>
-
-          <Typography
-            sx={{
-              fontFamily: 'Raleway',
-              fontSize: '60px',
-              fontWeight: 550,
-              lineHeight: '70px',
-              textAlign: 'left',
-              textUnderlinePosition: 'from-font',
-              textDecorationSkipInk: 'none',
-              color: '#FFFFFF',
-              transform: animateTradition ? 'translateY(0)' : 'translateY(50px)',
-              opacity: animateTradition ? 1 : 0,
-              transition: 'transform 1s ease-out, opacity 1s ease-out',
-            }}
-          >
-            Tradition
+            Experience The Rhythm of Tradition
           </Typography>
 
           <Typography

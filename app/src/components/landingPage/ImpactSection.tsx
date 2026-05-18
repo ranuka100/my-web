@@ -1,7 +1,9 @@
 import { Grid, Typography, Box } from '@mui/material';
 import { motion } from 'framer-motion';
 import { FormatQuote } from '@mui/icons-material'; // Material-UI quote icon
-import pic2 from '../../../public/images/home/dancer_bg.jpeg'; // Ensure correct path
+import { preferWebp } from '../../utils/imagePaths';
+
+const DANCER_BG = preferWebp('/images/home/dancer_bg.jpeg');
 
 const ImpactSection = () => {
   return (
@@ -36,7 +38,7 @@ const ImpactSection = () => {
           >
             <Box
               component="img"
-              src={pic2}
+              src={DANCER_BG}
               alt="Sri Lankan Cultural Heritage"
               sx={{
                 width: '100%',

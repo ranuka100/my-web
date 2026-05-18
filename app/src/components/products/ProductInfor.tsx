@@ -1,13 +1,22 @@
 import { useState, useEffect } from 'react';
-import { Grid, Typography, IconButton, Box, CardMedia, Card, CardContent, useMediaQuery } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { Grid, Typography, IconButton, Box, Card, CardContent, useMediaQuery } from '@mui/material';
+import OptimizedCardMedia from '../common/OptimizedCardMedia';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
-import productsData from '../../data/Product_Details.json'; // Import the JSON file
-import ProductInfoMobile from './ProductInfor_mobile'; // Assuming you have a separate mobile view component
+import { products, getProductIndexBySlug, getProductPath } from '../../data/productUtils';
+import ProductInfoMobile from './ProductInfor_mobile';
 
-const ProductInfor = () => {
-  const products = productsData.products;
+type ProductInforProps = {
+  initialSlug?: string;
+};
 
-  const [currentProductIndex, setCurrentProductIndex] = useState(0);
+const ProductInfor = ({ initialSlug }: ProductInforProps) => {
+  const navigate = useNavigate();
+  const initialIndex = initialSlug ? getProductIndexBySlug(initialSlug) : 0;
+
+  const [currentProductIndex, setCurrentProductIndex] = useState(
+    initialIndex >= 0 ? initialIndex : 0
+  );
   const [mainImage, setMainImage] = useState(products[0].main_imageSrc);
   const currentProduct = products[currentProductIndex];
   
@@ -23,20 +32,34 @@ const ProductInfor = () => {
 
   useEffect(() => {
     setMainImage(currentProduct.main_imageSrc);
-  }, [currentProductIndex]);
+  }, [currentProductIndex, currentProduct.main_imageSrc]);
+
+  useEffect(() => {
+    if (initialSlug) {
+      const idx = getProductIndexBySlug(initialSlug);
+      if (idx >= 0) setCurrentProductIndex(idx);
+    }
+  }, [initialSlug]);
 
   const handleImageClick = (image: string) => setMainImage(image); // No need for SetStateAction<string>
 
+  const goToProductIndex = (index: number) => {
+    setCurrentProductIndex(index);
+    navigate(getProductPath(products[index].slug));
+  };
+
   const handlePrevProduct = () => {
-    setCurrentProductIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : products.length - 1));
+    const next = currentProductIndex > 0 ? currentProductIndex - 1 : products.length - 1;
+    goToProductIndex(next);
   };
 
   const handleNextProduct = () => {
-    setCurrentProductIndex((prevIndex) => (prevIndex < products.length - 1 ? prevIndex + 1 : 0));
+    const next = currentProductIndex < products.length - 1 ? currentProductIndex + 1 : 0;
+    goToProductIndex(next);
   };
 
   const handleProductClick = (index: number) => {
-    setCurrentProductIndex(index);
+    goToProductIndex(index);
   };
 
   const getOtherProducts = (currentIndex: number) => {
@@ -51,7 +74,7 @@ const ProductInfor = () => {
   const displayedOtherProducts = getOtherProducts(currentProductIndex);
 
   if (isMobile) {
-    return <ProductInfoMobile />;
+    return <ProductInfoMobile initialSlug={initialSlug} />;
   }
 
   return (
@@ -77,10 +100,10 @@ const ProductInfor = () => {
                     }}
                     onClick={() => handleImageClick(image)}
                   >
-                    <CardMedia
-                      component="img"
-                      alt={`Image ${index + 1}`}
+                    <OptimizedCardMedia
+                      alt={`${currentProduct.name} — detail view ${index + 1}`}
                       image={image}
+                      loading="lazy"
                       sx={{ objectFit: 'cover', height: '100%', width: '100%' }}
                     />
                   </Card>
@@ -91,10 +114,10 @@ const ProductInfor = () => {
 
           <Grid item xs={5}>
             <Box display="flex" justifyContent="center" sx={{ width: '100%' }}>
-              <CardMedia
-                component="img"
-                alt="Main Image"
+              <OptimizedCardMedia
+                alt={`${currentProduct.name} — handcrafted Sri Lankan drum souvenir`}
                 image={mainImage}
+                loading="eager"
                 sx={{
                   maxWidth: '800px',
                   marginTop: '20px',
@@ -114,6 +137,7 @@ const ProductInfor = () => {
           Souvenirs
         </Typography>
         <Typography
+          component="h1"
           variant="h5"
           gutterBottom
           sx={{
@@ -192,14 +216,16 @@ const ProductInfor = () => {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={9}>
-            <Grid container spacing={2}>
+          <Grid item xs={12} sm={9} sx={{ minWidth: 0 }}>
+            <Grid container spacing={2} sx={{ width: '100%' }}>
               {displayedOtherProducts.map((product, index) => (
-                <Grid item xs={12} sm={4} key={index}>
+                <Grid item xs={12} sm={4} key={index} sx={{ minWidth: 0, display: 'flex' }}>
                   <Card
                     sx={{
-                      width: '288px',
-                      height: '270px',
+                      width: '100%',
+                      maxWidth: '100%',
+                      height: 'auto',
+                      minHeight: 240,
                       gap: '6.53px',
                       marginBottom: '50px',
                       textAlign: 'center',
@@ -207,15 +233,15 @@ const ProductInfor = () => {
                       borderWidth: '0.82px',
                       padding: '13px',
                       boxShadow: '0px 4px 6px rgba(56, 53, 53, 0.62)',
-                      backgroundColor: 'transparent',
+                      backgroundColor: '#fff',
+                      flex: 1,
                       '&:hover': {
                         boxShadow: '3px 3px 3px 3px rgb(122, 47, 47)',
                       },
                     }}
                     onClick={() => handleProductClick(products.indexOf(product))}
                   >
-                    <CardMedia
-                      component="img"
+                    <OptimizedCardMedia
                       alt={product.name}
                       height="200"
                       image={product.home_imageSrc}
@@ -225,7 +251,6 @@ const ProductInfor = () => {
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        marginLeft: '-10px',
                       }}
                     />
 
@@ -240,7 +265,7 @@ const ProductInfor = () => {
                           lineHeight: '13px',
                           letterSpacing: '0%',
                           color: 'black',
-                          marginTop: '-35px'
+                          marginTop: 0
                         }}
                       >
                         {product.name}

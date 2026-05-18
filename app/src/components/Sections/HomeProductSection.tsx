@@ -1,4 +1,5 @@
-import { Box, Grid2, Typography } from '@mui/material';
+import { Box, Grid2, Typography, Button } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 import Carousel from '../Slider/Carousel';
 import { productBackground } from '../../assets/index';
 
@@ -22,6 +23,7 @@ const HomeProductSection = () => {
         <Grid2 container spacing={2}>
           <Grid2 size={{ xs: 12, md: 5 }} sx={{ p: '1' }}>
             <Typography
+              component="h2"
               variant="h1"
               sx={{
                 fontFamily: 'Poppins',
@@ -60,6 +62,20 @@ const HomeProductSection = () => {
               drum souvenirs. Perfect for gifting, décor, or as a keepsake of
               Sri Lankan culture.
             </Typography>
+            <Button
+              component={RouterLink}
+              to="/product"
+              variant="contained"
+              sx={{
+                mt: 3,
+                backgroundColor: '#D2691E',
+                textTransform: 'none',
+                fontFamily: 'Poppins',
+                '&:hover': { backgroundColor: '#b85a1a' },
+              }}
+            >
+              View all products
+            </Button>
           </Grid2>
           <Grid2 size={{ xs: 12, md: 7 }} sx={{ p: '1' }}>
             <Carousel />

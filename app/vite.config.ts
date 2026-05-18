@@ -24,12 +24,8 @@ export default defineConfig({
       },
     },
   },
-  server: {
-    // Enable historyApiFallback for React Router
-    //when run local comment middlewareMode: true, this and uncomment historyApiFallback: true, this
-    middlewareMode: true,
-    // historyApiFallback: true, 
-  },
+  // Vite dev server handles SPA routing (React Router) by default.
+  // Do not set server.middlewareMode: true — that disables the HTTP server and breaks `npm run dev`.
   define: {
     'process.env': {},
   },

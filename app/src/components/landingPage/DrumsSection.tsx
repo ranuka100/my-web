@@ -1,5 +1,6 @@
-import { Grid, Card, Typography, Button, CardMedia, Box } from '@mui/material';
+import { Grid, Card, Typography, Button, Box } from '@mui/material';
 import Product_Details from '../../data/Product_Details.json';
+import OptimizedCardMedia from '../common/OptimizedCardMedia';
 
 const DrumsSection = () => {
   const data = Product_Details.products;
@@ -14,6 +15,7 @@ const DrumsSection = () => {
       }}
     >
       <Typography
+        component="h2"
         variant="h1"
         sx={{
           fontFamily: 'Nunito',
@@ -63,15 +65,14 @@ const DrumsSection = () => {
           <Grid container spacing={0}>
             {/* Image Section */}
             <Grid item xs={12} sm={4} sx={{ display: 'flex', justifyContent: 'center', padding: { xs: 2, sm: 3 } }}>
-              <CardMedia
-                component="img"
+              <OptimizedCardMedia
                 alt={item.name}
                 height="80%"
                 image={item.home_imageSrc || 'https://via.placeholder.com/150'}
                 sx={{
                   objectFit: 'cover',
                   borderRadius: '5px',
-                  width: { xs: '80%', sm: '100%' },  // Reduce image size on mobile
+                  width: { xs: '80%', sm: '100%' },
                 }}
               />
             </Grid>

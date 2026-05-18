@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 // Import slick carousel styles
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { resolvePublicImage } from '../../utils/imagePaths';
 
 const TestimonialsSection = () => {
   const settings = {
@@ -74,7 +75,7 @@ const TestimonialsSection = () => {
             >
               <Grid item xs={12}>
                 <img
-                  src={testimonial.image}
+                  src={resolvePublicImage(testimonial.image)}
                   alt={testimonial.name}
                   style={{
                     borderRadius: '50%',
