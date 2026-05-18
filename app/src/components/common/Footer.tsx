@@ -24,7 +24,6 @@ const Footer = () => {
   // Define routes where the footer should be curved
   const curvedRoutes = ['/','/product', '/about']; // Example routes
   const isCurved = curvedRoutes.includes(location.pathname);
-  console.log('first', isCurved);
   return (
     <footer>
       <Box
@@ -63,7 +62,7 @@ const Footer = () => {
                 <Email sx={{ mr: 1 }} />
                 <Typography variant="body2">
                   <Link
-                    href="mailto:info@music.com.lk"
+                    href="mailto:info@tharangadrums.lk"
                     sx={{
                       color: 'white',
                       textDecoration: 'none',
@@ -79,21 +78,6 @@ const Footer = () => {
                 <Typography variant="body2">
                   <Link
                     href="tel:+94728130647"
-                    sx={{
-                      color: 'white',
-                      textDecoration: 'none',
-                      '&:hover': { color: '#D2691E' },
-                    }}
-                  >
-                    +94 77 338 8998
-                  </Link>
-                </Typography>
-              </Box>
-              <Box display="flex" alignItems="center">
-                <Phone sx={{ mr: 1 }} />
-                <Typography variant="body2">
-                  <Link
-                    href="tel:+94770155918"
                     sx={{
                       color: 'white',
                       textDecoration: 'none',

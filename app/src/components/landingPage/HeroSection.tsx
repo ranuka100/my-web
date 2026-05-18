@@ -2,12 +2,16 @@ import { Box, Grid, Typography, IconButton, Tooltip, useMediaQuery } from '@mui/
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import HeroSection_mobile from './HeroSection_mobile'; // Import mobile view
+import HeroSection_mobile from './HeroSection_mobile';
+import SeoImage from '../common/SeoImage';
 
-import bg_pic_main from '../../../public/images/home/Untitled design.svg'; // Ensure correct path
-import bg_pic_1 from '../../../public/images/home/hero_bg_pic_1.png'; // Ensure correct path
-import bg_pic_2 from '../../../public/images/home/hero_bg_pic_2.jpeg'; // Ensure correct path
-import bg_pic_3 from '../../../public/images/home/hero_bg_pic_3.jpeg'; // Ensure correct path
+import bg_pic_main from '../../../public/images/home/Untitled design.svg';
+
+const HERO_IMAGES = {
+  pic1: '/images/home/hero_bg_pic_1.png',
+  pic2: '/images/home/hero_bg_pic_2.jpeg',
+  pic3: '/images/home/hero_bg_pic_3.jpeg',
+} as const;
 
 const HeroSection = () => {
     // Use media query to detect screen size
@@ -69,6 +73,7 @@ const HeroSection = () => {
           }}
         >
           <Typography
+            component="h1"
             sx={{
               fontFamily: 'Raleway',
               fontSize: '124px',
@@ -175,11 +180,13 @@ const HeroSection = () => {
           }}
         >
           <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
-            <Box
-              component="img"
-              src={bg_pic_1}
-              alt="Drumming 1"
-              sx={{
+            <SeoImage
+              src={HERO_IMAGES.pic1}
+              alt="Traditional Sri Lankan drummer with Davula drum"
+              width={250}
+              height={360}
+              priority
+              style={{
                 left: '135vh',
                 top: '16px',
                 width: '250px',
@@ -187,15 +194,17 @@ const HeroSection = () => {
                 borderRadius: '204.21px',
                 border: '6px solid white',
                 opacity: 1,
-                position: 'absolute', // Ensures it's positioned correctly
+                position: 'absolute',
                 zIndex: 1,
+                objectFit: 'cover',
               }}
             />
-            <Box
-              component="img"
-              src={bg_pic_2}
-              alt="Drumming 1"
-              sx={{
+            <SeoImage
+              src={HERO_IMAGES.pic2}
+              alt="Handcrafted Geta Beraya traditional drum souvenir"
+              width={340}
+              height={520}
+              style={{
                 left: '155vh',
                 top: '30px',
                 width: '340px',
@@ -203,14 +212,16 @@ const HeroSection = () => {
                 borderRadius: '204.21px',
                 border: '6px solid white',
                 opacity: 1,
-                position: 'absolute', // Ensures it's positioned correctly
+                position: 'absolute',
+                objectFit: 'cover',
               }}
             />
-            <Box
-              component="img"
-              src={bg_pic_3}
-              alt="Drumming 1"
-              sx={{
+            <SeoImage
+              src={HERO_IMAGES.pic3}
+              alt="Artisan playing Thammattama twin drums at ceremony"
+              width={220}
+              height={340}
+              style={{
                 left: '185vh',
                 top: '210px',
                 width: '220px',
@@ -218,8 +229,9 @@ const HeroSection = () => {
                 borderRadius: '204.21px',
                 border: '6px solid white',
                 opacity: 1,
-                position: 'absolute', // Ensures it's positioned correctly
+                position: 'absolute',
                 zIndex: 1,
+                objectFit: 'cover',
               }}
             />
           </Box>

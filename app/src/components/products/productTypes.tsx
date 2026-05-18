@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Grid, Box, Typography, IconButton } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
-import productsData from '../../data/Product_Details.json'; // Ensure this path is correct
+import productsData from '../../data/Product_Details.json';
+import SeoImage from '../common/SeoImage';
 
 const TraditionalDrumsPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -49,6 +50,7 @@ const TraditionalDrumsPage = () => {
       >
         {/* Title */}
         <Typography
+          component="h2"
           variant="h1"
           sx={{
             fontFamily: 'Nunito',
@@ -132,17 +134,18 @@ const TraditionalDrumsPage = () => {
             },
           }}
         >
-          <img
+          <SeoImage
             src={currentItem.home_imageSrc}
-            alt={currentItem.name}
+            alt={`${currentItem.name} — traditional Sri Lankan drum`}
             style={{
-              maxWidth: '100%', // Fix: Maintain aspect ratio
+              maxWidth: '100%',
               height: 'auto',
               borderRadius: '10px',
               objectFit: 'cover',
               maxHeight: '450px',
               width: 'auto',
-              margin: '0 auto', // Center the image
+              margin: '0 auto',
+              display: 'block',
             }}
           />
         </Box>

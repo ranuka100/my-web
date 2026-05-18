@@ -96,7 +96,7 @@ function NavBar() {
       { id: 'hero-section', color: 'white' },
       { id: 'home-product-section', color: 'black' },
       { id: 'impact-section', color: 'white' },
-      { id: 'drums-section"', color: 'black' },
+      { id: 'drums-section', color: 'black' },
       { id: 'testimonials-section', color: 'black' },
     ];
 

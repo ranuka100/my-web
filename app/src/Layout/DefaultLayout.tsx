@@ -1,11 +1,13 @@
 import NavBar from '../components/common/NavBar';
 import { Outlet } from 'react-router-dom';
 import Footer from '../components/common/Footer';
-import './DefaultLayout.css'; // Import your CSS file
+import SeoLayout from '../seo/SeoLayout';
+import './DefaultLayout.css';
 
 const DefaultLayout = () => {
   return (
     <div className="layout-container">
+      <SeoLayout />
       <NavBar />
       <main className="content">
         <Outlet />

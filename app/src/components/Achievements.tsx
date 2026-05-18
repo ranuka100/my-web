@@ -8,6 +8,7 @@ import background from '../assets/backgroundImages/Group.svg';
 
 // Import the JSON data (relative path from the component)
 import achievementsData from '../pages/About/AchievementsData.json';
+import { resolvePublicImage } from '../utils/imagePaths';
 
 const Achievements = () => {
   const [achievements, setAchievements] = useState<any[]>([]); 
@@ -166,7 +167,7 @@ const Achievements = () => {
                   {achievement.images.map((image: string, idx: number) => (
                     <Grid item key={idx} sx={{ padding: '2px' }}>
                       <img
-                        src={image}
+                        src={resolvePublicImage(image)}
                         alt={`Section ${idx + 1}`}
                         style={{
                           width: '100%',

@@ -5,12 +5,16 @@ import Achievements from '../../components/Achievements';
 import ImageGallery from '../../components/common/ImageGallery';
 
 // Import images properly
-import pic3 from "/images/products/getaberaya/getaberaya_aboutus.png";
-import pic4 from '/images/products/Thammattama/Thammattama_aboutus.jpg';
-import pic1 from '/images/products/davula/davula_aboutus.png';
-import pic2 from "/images/products/pahatharata_beraya/pahatharata_bereaya_aboutus.png";
+import SeoImage from '../../components/common/SeoImage';
 
-import yt_thumbamil from '/images/aboutUs/vedio_thumbmail.png';
+const VIDEO_THUMB = '/images/aboutUs/vedio_thumbmail.webp';
+
+const ABOUT_IMAGES = {
+  davula: '/images/products/davula/davula_aboutus.png',
+  pahatharata: '/images/products/pahatharata_beraya/pahatharata_bereaya_aboutus.png',
+  geta: '/images/products/getaberaya/getaberaya_aboutus.png',
+  thammattama: '/images/products/Thammattama/Thammattama_aboutus.jpg',
+} as const;
 import background from '../../assets/backgroundImages/Group.svg'; // Import the image
 
 const About = () => {
@@ -48,6 +52,7 @@ const About = () => {
             <Box sx={{ maxWidth: 800, mx: 'auto' }}>
               {/* Title */}
               <Typography
+                component="h1"
                 variant="h3"
                 fontWeight="bold"
                 align="left"
@@ -120,9 +125,9 @@ const About = () => {
                 <Box
                   sx={{ height: { xs: '250px', md: '400px' }, borderRadius: 2, overflow: 'hidden' }}
                 >
-                  <img
-                    src={pic1}
-                    alt="Drums"
+                  <SeoImage
+                    src={ABOUT_IMAGES.davula}
+                    alt="Davula traditional drum — New Tharanga Musical Instruments"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </Box>
@@ -134,9 +139,9 @@ const About = () => {
                 transition={{ duration: 1.1 }}
               >
                 <Box sx={{ flex: 1, borderRadius: 2, overflow: 'hidden' }}>
-                  <img
-                    src={pic2}
-                    alt="Craftsmanship"
+                  <SeoImage
+                    src={ABOUT_IMAGES.pahatharata}
+                    alt="Pahatharata Beraya drum craftsmanship in Sri Lanka"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </Box>
@@ -154,9 +159,9 @@ const About = () => {
                 transition={{ duration: 1.2 }}
               >
                 <Box sx={{ flex: 1, borderRadius: 2, overflow: 'hidden' }}>
-                  <img
-                    src={pic3}
-                    alt="Culture"
+                  <SeoImage
+                    src={ABOUT_IMAGES.geta}
+                    alt="Geta Beraya ceremonial drum — Sri Lankan heritage"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </Box>
@@ -170,9 +175,9 @@ const About = () => {
                 <Box
                   sx={{ height: { xs: '250px', md: '400px' }, borderRadius: 2, overflow: 'hidden' }}
                 >
-                  <img
-                    src={pic4}
-                    alt="Heritage"
+                  <SeoImage
+                    src={ABOUT_IMAGES.thammattama}
+                    alt="Thammattama twin drums — Sri Lankan musical tradition"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </Box>
@@ -210,7 +215,7 @@ const About = () => {
             ></iframe>
           ) : (
             <img
-              src={yt_thumbamil}
+              src={VIDEO_THUMB}
               alt="YouTube Video Thumbnail"
               style={{
                 width: '100%',

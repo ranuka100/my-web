@@ -1,4 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/autoplay';
 import CarouselSlide from './CarouselItem';
 import './styles.scss';
 import { useBreakpointMode } from '../../utils/useBreakpointMode';

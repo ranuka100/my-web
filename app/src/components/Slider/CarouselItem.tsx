@@ -1,6 +1,7 @@
 import { Box, Grid2 as Grid, Typography, Link, useTheme } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { useBreakpointMode } from '../../utils/useBreakpointMode';
+import { resolvePublicImage } from '../../utils/imagePaths';
 
 interface CarouselSlideProps {
   imageSrc: string;
@@ -67,7 +68,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
               boxShadow: 1,
             }}
             alt={title}
-            src={imageSrc}
+            src={resolvePublicImage(imageSrc)}
           />
         </Grid>
 
